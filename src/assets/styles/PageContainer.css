@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Arcade";
+  src: url("../../assets/fonts/arcade/arcade-webfont.woff") format("woff"),
+       url("../../assets/fonts/arcade/arcade-webfont.woff2") format("woff2"); }
+
+@font-face {
+font-family: "Stereofidelic";
+src: url("../../assets/fonts/stereofidelic/stereofidelic-webfont.woff") format("woff"),
+    url("../../assets/fonts/stereofidelic/stereofidelic-webfont.woff2") format("woff2"); }
+
+@font-face {
+font-family: "Dogica Pixel";
+src: url("../../assets/fonts/dogica/dogicapixel-webfont.woff") format("woff"),
+      url("../../assets/fonts/dogica/dogicapixel-webfont.woff2") format("woff2"); }
+
+@font-face {
+font-family: "Dogica Pixel Bold";
+src: url("../../assets/fonts/dogica/dogicapixelbold-webfont.woff") format("woff"),
+      url("../../assets/fonts/dogica/dogicapixelbold-webfont.woff2") format("woff2"); }
+
+*,
+*::before,
+*::after {
+box-sizing: border-box; }
+
+html {
+line-height: 1.15;
+-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+display: block; }
+
+h1, h2, h3, h4, h5, h6 {
+margin-top: 0;
+margin-bottom: 1.8rem;
+color: #F3EFF5 }
+
+.bg-one {
+	background-color: #1A1847;
+	height: 100%
+}
+
+.bg-two {
+  background-color: #172165;
+	height: 100%
+}
+
+.main {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	flex: 1;
+	-ms-flex: 1;
+	font-family: "Dogica Pixel", sans-serif;
+	font-weight: 400;
+	line-height: 1.4;
+	color: #F3EFF5;
+	text-align: left; }
+
+.content-wrapper {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	min-height: 100vh;
+	width: calc(100% - 160px);
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	transition: all 0.2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+	.content-wrapper {
+		transition: none; } }
+		
+@media screen and (max-width: 992px) {
+	.content-wrapper {
+		width: 100%;
+		margin-top: 60px }
+	.sidebar + .content-wrapper {
+		margin-left: 0; } }
+
+.footer {
+	background-color: #000;
+	color: #F3EFF5;
+	padding: 1.2rem 3.2rem;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	min-height: 60px;
+	max-height: 60px;
+	margin-top: auto; }
