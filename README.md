@@ -1,6 +1,6 @@
 # React Portfolio
 
-![Portfolio preview image](./assets/images/portfolio-preview.png)
+![Portfolio preview image](./portfolio-preview.png)
 
 ## (Under Construction)
 
