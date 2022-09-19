@@ -115,6 +115,10 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '../client/public/index.html'))
+);
+
 app.listen(process.env.PORT || PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
