@@ -8,7 +8,7 @@ const Contact = () => {
     message: '',
   });
 
-  const [status, setStatus] = useState("Send");
+  // const [status, setStatus] = useState("Send");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -135,7 +135,7 @@ const Contact = () => {
         <div className="app-form-group buttons">
           <button 
             type="submit"
-            className="btn">{status}</button>
+            className="btn">send</button>
         </div>
       </form>
     </div>

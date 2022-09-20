@@ -66,7 +66,7 @@ const creds = require('./config/connection');
 const PORT = 3002;
 let transport = {
     host: 'smtp.gmail.com',
-    port: 465,
+    port: 587,
     auth: {
     user: creds.USER,
     pass: creds.PASS
