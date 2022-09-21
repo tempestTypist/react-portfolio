@@ -76,7 +76,6 @@ const corsOptions = {
   },
   credentials: true,
 }
-app.use(cors(corsOptions))
 
 
 let transport = {
@@ -119,7 +118,7 @@ router.post('/send', (req, res, next) => {
   })
 })
 const app = express()
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use('/', router)
 
