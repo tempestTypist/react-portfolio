@@ -26,27 +26,49 @@ const Contact = () => {
       message: '',
     });
   }
-  
-  const handleFormSubmit = (e) => {
+
+  function handleFormSubmit(e) {
     e.preventDefault();
     fetch('http://localhost:3002/send', {
-      method: "POST",
-      body: JSON.stringify(formState),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-    }).then(
-    (response) => (response.json())
-      ).then((response)=> {
-    if (response.status === 'success') {
-      alert("Message Sent.");
-      this.resetForm()
-    } else if (response.status === 'fail') {
-      alert("Message failed to send.")
-    }
-  })
-}
+        method: "POST",
+        body: JSON.stringify(formState),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      }).then(
+      (response) => (response.json())
+        ).then((response)=> {
+      if (response.status === 'success') {
+        alert("Message Sent.");
+        this.resetForm()
+      } else if(response.status === 'fail') {
+        alert("Message failed to send.")
+      }
+    })
+  }
+
+  
+//   const handleFormSubmit = (e) => {
+//     e.preventDefault();
+//     fetch('http://localhost:3002/send', {
+//       method: "POST",
+//       body: JSON.stringify(formState),
+//       headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//       },
+//     }).then(
+//     (response) => (response.json())
+//       ).then((response)=> {
+//     if (response.status === 'success') {
+//       alert("Message Sent.");
+//       this.resetForm()
+//     } else if (response.status === 'fail') {
+//       alert("Message failed to send.")
+//     }
+//   })
+// }
 
   // if (status) {
   //   return (
