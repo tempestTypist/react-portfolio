@@ -63,7 +63,22 @@ let router = express.Router();
 let nodemailer = require('nodemailer');
 let cors = require('cors');
 const creds = require('./config/connection');
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
+
+const whitelist = ["http://localhost:3002"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+app.use(cors(corsOptions))
+
+
 let transport = {
     host: 'smtp.gmail.com',
     port: 587,
