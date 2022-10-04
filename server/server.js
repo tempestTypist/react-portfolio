@@ -295,6 +295,18 @@ app.use(express.json());
 app.use("/", router);
 app.listen(PORT, () => console.log("Server running!"));
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '../client/public/index.html'))
+);
+
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
