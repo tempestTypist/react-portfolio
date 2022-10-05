@@ -23,45 +23,23 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
     const URL = "https://tempest-portfolio.herokuapp.com/contact"
     let response = await fetch(URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify(details),
+      body: JSON.stringify(formState),
     });
     setStatus("Submit");
+    resetForm();
     let result = await response.json();
     alert(result.status);
   };
 
-  //   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     fetch('http://localhost:3002/send', {
-//         method: "POST",
-//         body: JSON.stringify(formState),
-//         headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json'
-//         },
-//       }).then(
-//       (response) => (response.json())
-//         ).then((response)=> {
-//       if (response.status === 'success') {
-//         alert("Message Sent.");
-//       } else if(response.status === 'fail') {
-//         console.log(response.error, response.datta)
-//         alert("Message failed to send.")
-//       }
-//     })
-//   }
+  const resetForm = () => {
+    setFormState({ name: '', email: '', message: '',})
+  }
 
   return (
     <section id="contact" className="py-3">

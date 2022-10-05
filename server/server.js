@@ -291,10 +291,6 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config()
-}
-
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
@@ -302,6 +298,10 @@ app.listen(PORT, () => console.log("Server running!"));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config()
 }
 
 app.get('*', (req, res) => {
@@ -334,6 +334,8 @@ router.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message; 
+  console.log("name: " + name + " email: " + email + " message: " + message)
+  console.log("from: " + name + ", " + email)
   const mail = {
     from: name + ", " + email,
     to: process.env.USER, 
