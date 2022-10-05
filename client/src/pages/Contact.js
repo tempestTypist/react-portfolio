@@ -29,7 +29,8 @@ const Contact = () => {
       email: email.value,
       message: message.value,
     };
-    let response = await fetch("http://localhost:5000/contact", {
+    const PORT = process.env.PORT || 5000;
+    let response = await fetch(`http://localhost:${PORT}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -40,6 +41,27 @@ const Contact = () => {
     let result = await response.json();
     alert(result.status);
   };
+
+  //   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     fetch('http://localhost:3002/send', {
+//         method: "POST",
+//         body: JSON.stringify(formState),
+//         headers: {
+//           'Accept': 'application/json',
+//           'Content-Type': 'application/json'
+//         },
+//       }).then(
+//       (response) => (response.json())
+//         ).then((response)=> {
+//       if (response.status === 'success') {
+//         alert("Message Sent.");
+//       } else if(response.status === 'fail') {
+//         console.log(response.error, response.datta)
+//         alert("Message failed to send.")
+//       }
+//     })
+//   }
 
   return (
     <section id="contact" className="py-3">
