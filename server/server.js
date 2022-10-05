@@ -335,12 +335,10 @@ router.post("/contact", (req, res) => {
   const email = req.body.email;
   const message = req.body.message; 
   const mail = {
-    from: name,
-    to: process.env.USER,
-    subject: "Contact Form Submission",
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Message: ${message}</p>`,
+    from: name + ", " + email,
+    to: process.env.USER, 
+    subject: 'New Message from Contact Form',
+    text: message
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {

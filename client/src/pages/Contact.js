@@ -29,9 +29,7 @@ const Contact = () => {
       email: email.value,
       message: message.value,
     };
-    const PORT = process.env.PORT || 5000;
-    const URL = process.env.URL || `http://localhost:${PORT}/contact`
-    console.log("port" + PORT,"url" + URL)
+    const URL = "https://tempest-portfolio.herokuapp.com/contact"
     let response = await fetch(URL, {
       method: "POST",
       headers: {
