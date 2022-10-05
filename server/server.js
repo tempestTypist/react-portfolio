@@ -294,7 +294,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.listen(PORT, () => console.log("Server running!"));
+app.listen(PORT, () => console.log(`App listening at port ${PORT} 🚀`));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -334,8 +334,6 @@ router.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message; 
-  console.log("name: " + name + " email: " + email + " message: " + message)
-  console.log("from: " + name + ", " + email)
   const mail = {
     from: name + ", " + email,
     to: process.env.USER, 
@@ -347,57 +345,7 @@ router.post("/contact", (req, res) => {
       console.log(error)
       res.json({ status: "Error" });
     } else {
-      res.json({ status: "Message Sent" });
+      res.json({ status: "Message Sent From " + name + email + message });
     }
   });
 });
-
-
-
-
-// var transport = {
-//     host: 'smtp.gmail.com',
-//     port: 587,
-//     auth: {
-//       user: process.env.USER,
-//       pass: process.env.PASS
-//     }
-// }
-// var transporter = nodemailer.createTransport(transport)
-// transporter.verify((error, success) => {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log('Server is ready to take messages');
-//   }
-// });
-// router.post('/send', (req, res, next) => {
-//   var name = req.body.name
-//   var email = req.body.email
-//   var message = req.body.message
-//   var content = `name: ${name} \n email: ${email} \n message: ${message} `
-//   var mail = {
-//     from: name,
-//     to: process.env.USER, 
-//     subject: 'New Message from Contact Form',
-//     text: content
-//   }
-//   transporter.sendMail(mail, (err, data) => {
-//     if (err) {
-//       res.json({
-//         status: 'fail',
-//         error: err,
-//         datta: data
-//       })
-//     } else {
-//       res.json({
-//        status: 'success'
-//       })
-//     }
-//   })
-// })
-// const app = express()
-// app.use(cors())
-// app.use(express.json())
-// app.use('/', router)
-// app.listen(3002)
