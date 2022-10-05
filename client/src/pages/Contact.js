@@ -31,6 +31,7 @@ const Contact = () => {
     };
     const PORT = process.env.PORT || 5000;
     const URL = process.env.URL || `http://localhost:${PORT}/contact`
+    console.log("port" + PORT,"url" + URL)
     let response = await fetch(URL, {
       method: "POST",
       headers: {
