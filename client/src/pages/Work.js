@@ -7,7 +7,7 @@ export default function Work() {
     {
       index: 0,
       headline: 'Drawfee Pets',
-      dsc: 'describe technologies used, function of site',
+      dsc: 'Full-stack application for building pets using a variety of drawings made by Drawfee on Youtube.',
       src: 'https://i.ibb.co/hCS3syj/thumbnail-Drawfee-Pets.png',
       href: 'https://drawfee-pets.herokuapp.com/'
     },
@@ -16,21 +16,21 @@ export default function Work() {
       headline: 'Vaporwave Desktop',
       dsc: 'Just a bit of fun with Jquery. A Windows 98 style desktop.',
       src: 'https://i.ibb.co/j6GKbzC/thumbnail-Vaporwave-Desktop.png',
-      href: 'https://svilleneuve1994.github.io/vaporwave-desktop/'
+      href: 'https://tempesttypist.github.io/vaporwave-desktop/'
     },
     {
       index: 2,
       headline: 'Dayplanner',
-      dsc: 'describe technologies used, function of site',
+      dsc: 'An organizational tool built in React - it is a dayplanner, weather tracker (my location only), to-do list builder, and hydration tracker.',
       src: 'https://i.ibb.co/D4GZCnP/thumbnail-Dayplanner.png',
-      href: ''
+      href: 'https://react-dayplanner.herokuapp.com/'
     },
     {
       index: 3,
-      headline: 'Focus On The Writing',
-      dsc: 'describe technologies used, function of site',
-      src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/typewriter.jpg',
-      href: ''
+      headline: 'Spooky Sights',
+      dsc: 'Our final project in coding bootcamp, this was a collaborative effort to build an API for finding haunted houses by state.',
+      src: 'https://github.com/vcapella/Cobweb-coders/raw/khaleel/screenshot1.png',
+      href: 'https://spooky-sights.herokuapp.com/homepage'
     }
   ]
 

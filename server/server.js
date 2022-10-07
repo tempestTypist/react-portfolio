@@ -335,17 +335,17 @@ router.post("/contact", (req, res) => {
   const email = req.body.email;
   const message = req.body.message; 
   const mail = {
-    from: name + ", " + email,
+    from: email,
     to: process.env.USER, 
     subject: 'New Message from Contact Form',
-    text: message
+    text: `name: ${name} \n email: ${email} \n message: ${message} `
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       console.log(error)
-      res.json({ status: "Error" });
+      res.json({ status: "Message Failed to Send" });
     } else {
-      res.json({ status: "Message Sent From " + name + email + message });
+      res.json({ status: "Message Sent!" });
     }
   });
 });

@@ -11,7 +11,7 @@ export default function About() {
         <div className="order-first order-lg-last card p-4 mb-3">
           <h1 className="fw-bold mb-0">I am a Web Developer.</h1>
           <h4 className="mb-4">(And Illustrator, sometimes.)</h4>
-          I have been working as a freelance front-end developer and illustrator since 2016. As of December 2021, I graduated UTOR's full-stack web development bootcamp. blah blah blah, some other stuff about myself
+          I have been working as a freelance front-end developer and illustrator since 2016. As of December 2021, I graduated UTOR's full-stack web development bootcamp. I am looking to further my skills in building full stack applications and gain more experience in the web development field. If you need someone to build a fun and functional website for you, I'm your gal!
         </div>
       </div>
       <div className="col-12 col-lg-6 about-right pt-4">
@@ -26,7 +26,7 @@ export default function About() {
               <span className="text-secondary"><a href="https://github.com/tempestTypist" target="_blank" rel="noopener noreferrer">tempestTypist</a></span>
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-            <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather me-2 icon-inline"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</h6>
+            <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather me-2 icon-inline"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</h6>
               <span className="text-secondary"><a href="https://linkedin.com/in/tempest-typist" target="_blank" rel="noopener noreferrer">tempest-typist</a></span>
             </li>
           </ul>
@@ -44,7 +44,7 @@ export default function About() {
                         aria-valuenow="99" 
                         aria-valuemin="0" 
                         aria-valuemax="100" 
-                        style={{"width":"99%"}} />
+                        style={{"width":"99.9%"}} />
                   </div>
                   <small>Javascript</small>
                   <div className="progress">
@@ -64,7 +64,7 @@ export default function About() {
                         aria-valuenow="99" 
                         aria-valuemin="0" 
                         aria-valuemax="100" 
-                        style={{"width":"99%"}} />
+                        style={{"width":"99.9%"}} />
                   </div>
                   <small>React</small>
                   <div className="progress">
