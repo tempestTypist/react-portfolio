@@ -49,7 +49,7 @@ const Contact = () => {
           <span>CONTACT ME</span>
         </div>
         <form className="contact-form" onSubmit={handleSubmit} method="POST">
-          <div class="input-container">
+          <div className="input-container">
             <input 
               type="text" 
               aria-describedby="name"
@@ -59,10 +59,10 @@ const Contact = () => {
               onChange={handleChange} 
               required="required"
             />
-            <label for="name">Name</label>
-            <div class="bar"></div>
+            <label htmlFor="name">Name</label>
+            <div className="bar"></div>
           </div>
-          <div class="input-container">
+          <div className="input-container">
             <input 
               type="text" 
               aria-describedby="email"
@@ -72,10 +72,10 @@ const Contact = () => {
               onChange={handleChange} 
               required="required"
             />
-            <label for="email">Email</label>
-            <div class="bar"></div>
+            <label htmlFor="email">Email</label>
+            <div className="bar"></div>
           </div>
-          <div class="input-container">
+          <div className="input-container">
             <input 
               type="text"  
               aria-describedby="message"
@@ -86,8 +86,8 @@ const Contact = () => {
               rows="4"
               required="required"
             />
-            <label for="message">Message</label>
-            <div class="bar"></div>
+            <label htmlFor="message">Message</label>
+            <div className="bar"></div>
           </div>
           <div className="app-form-group buttons">
             <button 

@@ -151,12 +151,6 @@ a:active {
 	}
 }
 
-@media screen and (max-width: 991px) {
-	.hero-img-wrapper {
-
-	}
-}
-
 .hero-img {
 	width: 100%;
 	-webkit-animation: ease-in-out 3s infinite floating;
@@ -191,7 +185,7 @@ a:active {
 }
 
 .navbar-nav .nav-link.active {
-	color: #b07edf
+	color: #eee7fd
 }
 
 @media (max-width: 991.98px) {

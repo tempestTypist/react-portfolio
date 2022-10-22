@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import { Container, Row, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
@@ -37,37 +38,18 @@ const Header = () => {
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#about">About</a>
+
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#work">Work</a>
+
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#contact">Contact</a>
+
 					</li>
-					{/* <li className="nav-item dropdown">
-						<a className="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Theme</a>
-						<ul className="dropdown-menu" aria-labelledby="dropdown01">
-							<li><a className="dropdown-item" href="#">Action</a></li>
-							<li><a className="dropdown-item" href="#">Another action</a></li>
-						</ul>
-					</li> */}
 				</ul>
 			</div>
-
-			{/* <div className="social-media order-lg-last">
-				<p className="mb-0 d-flex">
-					<a href="#" className="d-flex align-items-center justify-content-center">
-						<FontAwesomeIcon icon={faFacebook} />
-					</a>
-					<a href="#" className="d-flex align-items-center justify-content-center">
-						<FontAwesomeIcon icon={faTwitter} />
-					</a>
-					<a href="#" className="d-flex align-items-center justify-content-center">
-						<FontAwesomeIcon icon={faInstagram} />
-					</a>
-				</p>
-			</div> */}
-
 		</div>
 	</nav>
   );

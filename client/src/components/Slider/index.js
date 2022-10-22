@@ -52,7 +52,6 @@ const Slider = (props) => {
   useEffect(() => {
     let listItems = []
     let className
-    console.log("current pre-card generation is: " + current)
   
     for (let i = current - 1; i < current + 2; i++) {
         let index = i
@@ -75,7 +74,6 @@ const Slider = (props) => {
             className += ' item--next'
             break;
         }
-        console.log(index, items[index], className)
         listItems.push({ "index": index, "id": items[index], "class": className })
     }
     setSlide({ ...slide, visibleItems: [...listItems] });
@@ -84,7 +82,7 @@ const Slider = (props) => {
   return (
     <div className="slider" aria-labelledby={headingId}>
       <ul className="slider__wrapper" style={wrapperTransform}>
-        <h3 id={headingId} class="visuallyhidden">{heading}</h3>
+        <h3 id={headingId} className="visuallyhidden">{heading}</h3>
         
         {slides.map(item => {
           return (

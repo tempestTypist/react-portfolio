@@ -42,22 +42,6 @@ const Slide = (props) => {
           </div>
         </div>
       </div>
-
-
-      {/* <div className="slide__image-wrapper">
-        <img 
-          className="slide__image"
-          alt={headline}
-          src={src}
-          onLoad={imageLoaded}
-        />
-      </div>
-      
-      <article className="slide__content">
-        <h2 className="slide__headline">{headline}</h2>
-        <button className="slide__action btn">{button}</button>
-      </article> */}
-
     </li>
   )
 }
