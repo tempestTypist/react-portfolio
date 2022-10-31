@@ -30,8 +30,8 @@ app.get('/', (req, res) =>
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
+  host: process.env.HOST,
+  port: process.env.EMAILPORT,
   auth: {
     user: process.env.USER,
     pass: process.env.PASS,
