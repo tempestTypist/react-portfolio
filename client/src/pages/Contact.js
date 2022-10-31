@@ -98,7 +98,7 @@ const Contact = () => {
           </div>
           <div className="input-container">
             <input 
-              type="text" 
+              type="email" 
               aria-describedby="email"
               id="email" 
               name="email" 
