@@ -31,7 +31,6 @@ const Contact = () => {
 
   useEffect(() => {
     if (inView) {
-      console.log("Contact in view")
       control.start("show");
     } 
   }, [control, inView]);
@@ -49,6 +48,7 @@ const Contact = () => {
     e.preventDefault();
     setStatus("Sending...");
     const URL = "https://tempest-portfolio.herokuapp.com/contact"
+    console.log(URL)
     let response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -56,9 +56,11 @@ const Contact = () => {
       },
       body: JSON.stringify(formState),
     });
+    console.log(response)
     setStatus("Submit");
     resetForm();
     let result = await response.json();
+    console.log(result)
     alert(result.status);
   };
 
@@ -96,7 +98,7 @@ const Contact = () => {
           </div>
           <div className="input-container">
             <input 
-              type="email" 
+              type="text" 
               aria-describedby="email"
               id="email" 
               name="email" 
