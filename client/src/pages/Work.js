@@ -13,7 +13,7 @@ export default function Work() {
     {
       index: 1,
       headline: 'Drawfee Pets',
-      dsc: 'Full-stack application for building pets using a variety of drawings made by Drawfee on Youtube. This is a fan-project and a sort of playground for me to test out things that Ive learned.',
+      dsc: 'Full-stack application for building pets using a variety of drawings made by Drawfee on Youtube. This is a fan-project and a sort of playground for me to test out things that Ive learned!',
       src: 'https://i.ibb.co/hCS3syj/thumbnail-Drawfee-Pets.png',
       href: 'https://drawfee-pets.herokuapp.com/'
     },

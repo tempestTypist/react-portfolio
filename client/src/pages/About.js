@@ -54,7 +54,7 @@ const About = () => {
           <div className="card p-4">
             <h1 className="fw-bold mb-0">I am a Web Developer.</h1>
             <h4 className="mb-4">(And Illustrator, sometimes.)</h4>
-            I have been working as a freelance front-end developer and illustrator since 2016, but I've been messing around with web developmentnpm since I was just a kid on Piczo.com. As of December 2021, I graduated UTOR's full-stack web development bootcamp. I am looking to further my skills in building full stack applications and to gain more experience in the web development field, so let's build your dream-site together!
+            I've been working as a freelance developer since 2016, but I've been messing around with front-end development since I was just a kid on Piczo.com. As of December 2021, I graduated UTOR's full stack bootcamp. I am looking to further my skills in building full stack applications and to gain more experience in the web development field, so let's build your dream-site together!
           </div>
         </motion.div>
       </motion.div>	
@@ -82,7 +82,7 @@ const About = () => {
             </ul>
           </div>
         </motion.div>
-        <motion.div className="" variants={itemB}>
+        <motion.div variants={itemB}>
           <div className="card p-3">
             <div className="card-body">
               <h4 className="d-flex align-items-center mb-3">Skills</h4>
