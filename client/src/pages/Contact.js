@@ -15,7 +15,7 @@ const Contact = () => {
   const control = useAnimation()
 	const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '200px 0px'
+    rootMargin: '100px 0px'
   })
 
   const sectionVariant = {
@@ -24,7 +24,7 @@ const Contact = () => {
       opacity: 1, 
       scale: 1, 
       transition: { 
-        duration: .1
+        duration: .5
       } 
     }
   };

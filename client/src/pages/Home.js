@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import minime from '../assets/images/mini-me.png'
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+
 const Home = () => {
   const control = useAnimation()
 	const [ref, inView] = useInView()
@@ -44,28 +45,28 @@ const Home = () => {
   }
 
   return (
-  <section id="home" className="banner"
-           onMouseMove={handleMouseMove}
-           onMouseLeave={handleMouseLeave}>
-    <div id="stars" className="stars">
-    </div>
-    <div id="planets" className="planets row g-0">
-    </div>
-    <div className="hero">
-      <div className="hero-text col-12 offset-md-4 col-md-4">
-        <p className="lead px-4">hi there! i'm</p>
-        <h1 className="display-4 px-4">Summer Villeneuve</h1>
+    <section id="home" className="banner"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}>
+      <div id="stars" className="stars">
       </div>
-      <motion.div 
-        ref={ref}
-        className="hero-img-wrapper col-12 col-md-4"
-        variants={heroVariant}
-        initial="offscreen"
-        animate={control}>
-        <img className="hero-img" src={minime}/>
-      </motion.div>
-    </div>
-  </section>
+      <div id="planets" className="planets row g-0">
+      </div>
+      <div className="hero">
+        <div className="hero-text col-12 offset-md-4 col-md-4">
+          <p className="lead px-4">hi there! i'm</p>
+          <h1 className="display-4 px-4">Summer Villeneuve</h1>
+        </div>
+        <motion.div 
+          ref={ref}
+          className="hero-img-wrapper col-12 col-md-4"
+          variants={heroVariant}
+          initial="offscreen"
+          animate={control}>
+          <img className="hero-img" src={minime}/>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 

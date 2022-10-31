@@ -34,10 +34,7 @@ export default function Work() {
   ]
 
   return (
-    <section 
-      id="work" 
-      className="py-3"
-      >
+    <section id="work" className="py-3">
       <h1 className="pb-3">My Work</h1>
       <Slider heading="Example Slider" slides={slideData} />
     </section>
