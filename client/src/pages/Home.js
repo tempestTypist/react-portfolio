@@ -1,7 +1,30 @@
-import React, { useRef } from 'react'
+import React, { useEffect } from 'react'
 import minime from '../assets/images/mini-me.png'
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+const Home = () => {
+  const control = useAnimation()
+	const [ref, inView] = useInView()
 
-export default function Home() {
+  const heroVariant = {
+    offscreen: {
+      y: -500
+    },
+    onscreen: {
+      y: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1.8
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (inView) {
+      control.start("onscreen");
+    } 
+  }, [control, inView]);
 
   const handleMouseMove = (event) => {
     let stars = document.getElementById('stars')
@@ -33,10 +56,17 @@ export default function Home() {
         <p className="lead px-4">hi there! i'm</p>
         <h1 className="display-4 px-4">Summer Villeneuve</h1>
       </div>
-      <div className="hero-img-wrapper col-12 col-md-4">
-        <img className="hero-img" src={minime} />
-      </div>
+      <motion.div 
+        ref={ref}
+        className="hero-img-wrapper col-12 col-md-4"
+        variants={heroVariant}
+        initial="offscreen"
+        animate={control}>
+        <img className="hero-img" src={minime}/>
+      </motion.div>
     </div>
   </section>
   );
 }
+
+export default Home;

@@ -1,6 +1,14 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import { m, motion, LazyMotion, domAnimation, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Slide = (props) => {
+  const control = useAnimation()
+	const [ref, inView] = useInView()
+  const sectionVariant = {
+
+  };
+
   const { src, dsc, headline, index, href } = props.slide
   const current = props.current
   let classNames = 'slide'
@@ -17,11 +25,21 @@ const Slide = (props) => {
   const imageLoaded = (event) => {
     event.target.style.opacity = 1
   }
-    
+  
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } 
+  }, [control, inView]);
+
   return (
-    <li 
+    <motion.li 
       ref={slide}
       className={classNames} 
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+      variants={sectionVariant}
       onClick={handleSlideClick}
     >
 
@@ -42,7 +60,7 @@ const Slide = (props) => {
           </div>
         </div>
       </div>
-    </li>
+    </motion.li>
   )
 }
 
