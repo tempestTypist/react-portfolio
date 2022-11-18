@@ -407,6 +407,80 @@ fieldset[disabled] .btn {
   }
 }
 
+.alien-hand-left {
+  height: 100px;
+  -webkit-animation: leftpeace 4s .1s ease-in-out infinite;
+  -webkit-transform-origin: bottom right 4px;
+  -moz-animation: leftpeace 4s .1s ease-in-out infinite;
+  -moz-transform-origin: bottom right 4px;
+  animation: leftpeace 4s .1s ease-in-out infinite;
+  transform-origin: bottom right 4px;
+}
+
+.alien-hand-right {
+  height: 100px;
+  -webkit-animation: rightpeace 4s .1s ease-in-out infinite;
+  -webkit-transform-origin: bottom left 4px;
+  -moz-animation: rightpeace 4s .1s ease-in-out infinite;
+  -moz-transform-origin: bottom left 4px;
+  animation: rightpeace 4s .1s ease-in-out infinite;
+  transform-origin: bottom left 4px;
+}
+
+@-webkit-keyframes leftpeace {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(-20deg);}
+  20% { transform: rotate(0);}
+  30% { transform: rotate(-20deg);}
+  40% { transform: rotate(0);}
+  100% { transform: rotate(0); }
+}
+
+@-moz-keyframes leftpeace {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(-20deg);}
+  20% { transform: rotate(0);}
+  30% { transform: rotate(-20deg);}
+  40% { transform: rotate(0);}
+  100% { transform: rotate(0); }
+}
+
+@keyframes leftpeace {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(-20deg);}
+  20% { transform: rotate(0);}
+  30% { transform: rotate(-20deg);}
+  40% { transform: rotate(0);}
+  100% { transform: rotate(0); }
+}
+
+@-webkit-keyframes rightpeace {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(20deg);}
+  20% { transform: rotate(0);}
+  30% { transform: rotate(20deg);}
+  40% { transform: rotate(0);}
+  100% { transform: rotate(0); }
+}
+
+@-moz-keyframes rightpeace {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(20deg);}
+  20% { transform: rotate(0);}
+  30% { transform: rotate(20deg);}
+  40% { transform: rotate(0);}
+  100% { transform: rotate(0); }
+}
+
+@keyframes rightpeace {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(20deg);}
+  20% { transform: rotate(0);}
+  30% { transform: rotate(20deg);}
+  40% { transform: rotate(0);}
+  100% { transform: rotate(0); }
+}
+
 .card .input-container {
   position: relative;
   margin: 0 60px 50px;
@@ -516,11 +590,11 @@ fieldset[disabled] .btn {
 	height: fit-content;
 }
 
-.card-title,
+/* .card-title,
 .app-form {
 	padding: 20px 50px;
 	width: 80%;
-}
+} */
 
 .app-form-group {
   margin-bottom: 15px;

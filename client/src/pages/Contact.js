@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import vintage from "../assets/images/vintage-comic.png"
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from "react"
+import alien from "../assets/images/alien-head.png"
+import alienLeft from "../assets/images/alien-hand-left.png"
+import alienRight from "../assets/images/alien-hand-right.png"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -78,9 +80,11 @@ const Contact = () => {
         variants={sectionVariant}
         initial="hidden"
         animate={control}>
-        <img src={vintage} alt="Vintage comic-style woman on phone" className="card__image" />
-        <div className="card-title">
-          <span>CONTACT ME</span>
+        <img src={alien} alt="Alien" className="card__image" />
+        <div className="d-flex flex-row align-items-end mb-4">
+          <img src={alienLeft} alt="Alien peace sign" className="alien-hand-left" />
+          <span className="card-title px-4">MAKE CONTACT</span>
+          <img src={alienRight} alt="Alien peace sign" className="alien-hand-right" />
         </div>
         <form className="contact-form" onSubmit={handleSubmit} method="POST">
           <div className="input-container">
