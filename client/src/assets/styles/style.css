@@ -165,7 +165,6 @@ a:active {
     top: 56px; /* Height of navbar */
     bottom: 0;
     left: 100%;
-    width: 20%;
     padding-right: 2rem;
     padding-left: 2rem;
     overflow-y: auto;

@@ -130,7 +130,9 @@ const Contact = () => {
           <div className="app-form-group text-center">
             <button 
               type="submit"
-              className="btn w-25">{status}</button>
+              className="btn">
+                {status}
+            </button>
           </div>
         </form>
       </motion.div>
