@@ -15,8 +15,10 @@ body {
 }
 
 a:link {
+  font-weight: bold;
   color: #a235fc;
-  text-decoration: none
+  text-decoration: none;
+  transition: color .2s ease-in-out
 }
 
 a:visited {
@@ -33,7 +35,7 @@ a:active {
 
 .header-nav {
 	display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   visibility: hidden;
   height: 56px;
   opacity: 0;
@@ -45,8 +47,12 @@ a:active {
 	z-index: 1030;
 	padding: 0.5rem 0;
 	color: #fff;
-	background-color: #6f42c1;
-	transition: visibility 0s, opacity 0.2s linear;;
+  background: rgb(50,0,191);
+  background: -moz-linear-gradient(top,  rgba(50,0,191,1) 0%, rgba(90,30,188,1) 4%, rgba(111,66,193,1) 35%, rgba(111,66,193,1) 67%, rgba(90,30,188,1) 92%, rgba(57,13,188,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(50,0,191,1) 0%,rgba(90,30,188,1) 4%,rgba(111,66,193,1) 35%,rgba(111,66,193,1) 67%,rgba(90,30,188,1) 92%,rgba(57,13,188,1) 100%);
+  background: linear-gradient(to bottom,  rgba(50,0,191,1) 0%,rgba(90,30,188,1) 4%,rgba(111,66,193,1) 35%,rgba(111,66,193,1) 67%,rgba(90,30,188,1) 92%,rgba(57,13,188,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3200bf', endColorstr='#390dbc',GradientType=0 );  
+	transition: visibility 0s, opacity 0.2s linear;
 }
 
 .banner {
@@ -66,22 +72,6 @@ a:active {
 .banner h1 {
 	font-family: "Supersonic Rocketship", sans-serif;
 	background-color: #000;
-}
-
-.banner .planets {
-	display: flex;
-	position: absolute;
-	top: 0;
-  justify-content: center;
-  align-items: center;
-	height: 100%;
-	width: 100%;
-	text-align: center;
-	overflow: hidden;
-	background-image: url("../images/planets.png");
-	background-repeat: no-repeat;
-	background-position: top;
-	background-size: cover;
 }
 
 .banner .stars {
@@ -118,8 +108,7 @@ a:active {
 	}
 }
 
-.banner .stars,
-.banner .planets { 
+.banner .stars { 
 	-webkit-animation: .5s ease 0s normal forwards 1 fadeIn;
 	animation: .5s ease 0s normal forwards 1 fadeIn;
 }
@@ -132,6 +121,8 @@ a:active {
 
 .hero-img-wrapper {
 	overflow: visible;
+  -webkit-animation: ease-in-out 3s infinite floating;
+	animation: ease-in-out 3s infinite floating;
 }
 
 @media screen and (max-width: 479px) {
@@ -146,18 +137,18 @@ a:active {
 		-webkit-transform: scale(.75);
 		transform: scale(.75);
 	}
+
+  .hero-img-wrapper .hero-img { width: 50%; }
 }
 
 .hero-img {
-	width: 100%;
-	-webkit-animation: ease-in-out 3s infinite floating;
-	animation: ease-in-out 3s infinite floating;
+  width: 100%;
 }
 
 .navbar-nav .nav-link {
 	color: #b07edf;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1.2rem
+  font-family: "Supersonic Rocketship", sans-serif;
+  font-size: 1.4rem
 }
 
 .navbar-nav .nav-link:hover {
@@ -287,6 +278,37 @@ a:active {
 .about-section .list-group-item {
 	color: #eee;
 	background-color: #35363B;
+}
+
+.about-section .list-group-item a:link,
+.about-section .list-group-item a:visited {
+  font-weight: bold;
+  color: #a235fc;
+  text-decoration: none;
+  transition: color .2s ease-in-out
+}
+
+.about-section .list-group-item:nth-child(2n) a:link,
+.about-section .list-group-item:nth-child(2n) a:visited,
+.about-section .list-group-item a:hover,
+.about-section .list-group-item a:visited:hover {
+  color: #ca89ff;
+}
+
+.about-section .list-group-item:nth-child(3n) a:link,
+.about-section .list-group-item:nth-child(3n) a:visited,
+.about-section .list-group-item:nth-child(2n) a:hover,
+.about-section .list-group-item a:active {
+  color: #dfb8ff;
+}
+
+.about-section .list-group-item:nth-child(3n) a:hover,
+.about-section .list-group-item:nth-child(2n) a:active  {
+  color: #ebd3ff;
+}
+
+.about-section .list-group-item:nth-child(3n) a:active {
+  color: #f5e9ff;
 }
 
 .about-section .card h1,
@@ -604,11 +626,6 @@ fieldset[disabled] .btn {
   margin-top: 40px;
 }
 
-.app-form-group.buttons {
-  margin-bottom: 0;
-  text-align: right;
-}
-
 .app-form-control {
   width: 100%;
   padding: 10px 0;
@@ -767,6 +784,7 @@ fieldset[disabled] .btn {
 .slider {
   --slide-size: 70vmin;
   --slide-margin: 4vmin;
+  --base-duration: .2s;
   height: var(--slide-size);
   margin: 0 auto;
   position: relative;
@@ -778,7 +796,7 @@ fieldset[disabled] .btn {
   display: flex;
   margin: 0 calc(var(--slide-margin) * -1);
   position: absolute;
-  transition: transform var(--base-duration) cubic-bezier(0.25, 1, 0.35, 1);
+  transition: transform .2s cubic-bezier(0.25, 1, 0.35, 1);
 }
 
 .slide {
@@ -792,7 +810,7 @@ fieldset[disabled] .btn {
   opacity: 0.25;
   position: relative;
   text-align: center;
-  transition: opacity calc(var(--base-duration) / 2) var(--base-ease), transform calc(var(--base-duration) / 2) var(--base-ease);
+  transition: opacity calc(.2s / 2) ease, transform calc(.2s / 2) ease;
   z-index: 1;
 }
 .slide--previous:hover, .slide--next:hover {
@@ -825,6 +843,7 @@ fieldset[disabled] .btn {
 @media (hover: hover) {
   .slide--current:hover .card {
     transform: scale(1.025) translate(calc(var(--x) / var(--d) * 1px), calc(var(--y) / var(--d) * 1px));
+    transition: opacity calc(.2s / 2) ease, transform calc(.2s / 2) ease;
   }
 }
 
@@ -837,7 +856,7 @@ fieldset[disabled] .btn {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  transition: transform calc(var(--base-duration) / 4) var(--base-ease);
+  transition: transform calc(.2s / 4) ease;
 }
 
 .slider ul {
@@ -854,7 +873,7 @@ fieldset[disabled] .btn {
      object-fit: cover;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--base-duration) var(--base-ease), transform var(--base-duration) var(--base-ease);
+  transition: opacity .2s ease, transform .2s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -877,12 +896,12 @@ fieldset[disabled] .btn {
   opacity: 0;
   padding: 4vmin;
   position: relative;
-  transition: transform var(--base-duration) var(--base-ease);
+  transition: transform .2s ease;
   visibility: hidden;
 }
 .slide--current .slide__content {
-  -webkit-animation: fadeIn calc(var(--base-duration) / 2) var(--base-ease) forwards;
-          animation: fadeIn calc(var(--base-duration) / 2) var(--base-ease) forwards;
+  -webkit-animation: fadeIn calc(.2s / 2) ease forwards;
+          animation: fadeIn calc(.2s / 2) ease forwards;
   visibility: visible;
 }
 @media (hover: hover) {

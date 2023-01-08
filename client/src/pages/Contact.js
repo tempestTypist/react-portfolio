@@ -127,10 +127,10 @@ const Contact = () => {
             <label htmlFor="message">Message</label>
             <div className="bar"></div>
           </div>
-          <div className="app-form-group buttons">
+          <div className="app-form-group text-center">
             <button 
               type="submit"
-              className="btn">{status}</button>
+              className="btn w-25">{status}</button>
           </div>
         </form>
       </motion.div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Slide from '../Slide'
 import SliderControl from '../SliderControl'
 
@@ -12,7 +12,7 @@ const Slider = (props) => {
     direction: "",
   });
 
-  const { items, visibleItems, current } = slide
+  const { items, current } = slide
 
   const headingId = `slider-heading__${heading.replace(/\s+/g, '-').toLowerCase()}`
   const wrapperTransform = {
@@ -48,36 +48,6 @@ const Slider = (props) => {
       })
     }
   }
-
-  useEffect(() => {
-    let listItems = []
-    let className
-  
-    for (let i = current - 1; i < current + 2; i++) {
-        let index = i
-        if (i < 0) {
-            index = items.length + i
-        } else if (i >= items.length) {
-            index = i % items.length
-        }
-  
-        switch (index) {
-          case current:
-            className += ' item--current'
-            break;
-  
-          case (current - 1):
-            className += ' item--previous'
-            break;
-  
-          case (current + 1):
-            className += ' item--next'
-            break;
-        }
-        listItems.push({ "index": index, "id": items[index], "class": className })
-    }
-    setSlide({ ...slide, visibleItems: [...listItems] });
-  }, [current]);
 
   return (
     <div className="slider" aria-labelledby={headingId}>
