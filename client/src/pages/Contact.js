@@ -31,12 +31,6 @@ const Contact = () => {
     }
   };
 
-  useEffect(() => {
-    if (inView) {
-      control.start("show");
-    } 
-  }, [control, inView]);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -50,6 +44,7 @@ const Contact = () => {
     e.preventDefault();
     setStatus("Sending...");
     const URL = "https://tempest-portfolio.herokuapp.com/contact"
+
     let response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -57,16 +52,26 @@ const Contact = () => {
       },
       body: JSON.stringify(formState),
     });
-    console.log(response)
-    setStatus("Submit");
-    resetForm();
+    
     let result = await response.json();
     alert(result.status);
+
+    if (result.status === "Message Sent!") {
+      resetForm();
+    }
+
+    setStatus("Submit");
   };
 
   const resetForm = () => {
     setFormState({ name: '', email: '', message: '',})
   }
+
+  useEffect(() => {
+    if (inView) {
+      control.start("show");
+    } 
+  }, [control, inView]);
 
   return (
     <section 

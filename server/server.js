@@ -53,7 +53,7 @@ router.post("/contact", (req, res) => {
   const mail = {
     from: `${email}`,
     to: process.env.USER, 
-    subject: 'New Message from Contact Form',
+    subject: `Portfolio Contact: ${name}`,
     text: `name: ${name} \n email: ${email} \n message: ${message} `
   };
   contactEmail.sendMail(mail, (error) => {
