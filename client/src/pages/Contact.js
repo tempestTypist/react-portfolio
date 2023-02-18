@@ -50,7 +50,6 @@ const Contact = () => {
     e.preventDefault();
     setStatus("Sending...");
     const URL = "https://tempest-portfolio.herokuapp.com/contact"
-    console.log(URL)
     let response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -62,7 +61,6 @@ const Contact = () => {
     setStatus("Submit");
     resetForm();
     let result = await response.json();
-    console.log(result)
     alert(result.status);
   };
 

@@ -49,12 +49,15 @@ const About = () => {
           <div className="card p-4">
             <h1 className="fw-bold mb-0">I am a Web Developer.</h1>
             <h4 className="mb-4">(And Illustrator, sometimes.)</h4>
-            I've been working as a freelance developer since 2016, but I've been messing around with front-end development since I was just a kid on Piczo.com. As of December 2021, I graduated UTOR's full stack bootcamp. I am looking to further my skills in building full stack applications and to gain more experience in the web development field, so let's build your dream-site together!
+            My first real delve into coding comes from when I took an interest in game modding - specifically, I wanted to add a couple items to a survival game I was playing on Steam. With no prior knowledge of game development, I spent days combing through files written in Lua, taking items of similar function already existing in the game and cloning them, splicing them together, and modifying them to suit my needs. Loading that game up and seeing my custom items on the screen gave me my first addicting taste of success, and writing code has been my life ever since!
+            <br/>
+            <br/>
+            I've been working as a freelance web developer doing the odd job here and there since 2016, but I've been messing around with front-end web development since I was just a kid on Piczo.com. As of December 2021, I've graduated UTOR's full stack bootcamp and continue learning new languages in my spare time. I am looking to further my skills in building full stack applications and to gain more experience in the web development field, so if you're looking for an enthusiastic and highly motivated web developer, please contact me using the form at the bottom of this page, and let's build your dream-site together!
           </div>
         </motion.div>
       </motion.div>	
       <motion.div 
-        className="col-12 col-md-6 d-flex flex-column justify-content-between"
+        className="col-12 col-md-6 d-flex flex-column justify-content-end"
         variants={sectionVariant}
         initial="hidden"
         animate={control}>
@@ -100,7 +103,7 @@ const About = () => {
                           aria-valuenow="90" 
                           aria-valuemin="0" 
                           aria-valuemax="100" 
-                          style={{"width":"90%"}} />
+                          style={{"width":"95%"}} />
                     </div>
                     <small>Bootstrap</small>
                     <div className="progress">
@@ -120,7 +123,7 @@ const About = () => {
                           aria-valuenow="90" 
                           aria-valuemin="0" 
                           aria-valuemax="100" 
-                          style={{"width":"90%"}} />
+                          style={{"width":"98%"}} />
                     </div>
                     <small>Node.js</small>
                     <div className="progress">
@@ -130,7 +133,7 @@ const About = () => {
                           aria-valuenow="85" 
                           aria-valuemin="0" 
                           aria-valuemax="100" 
-                          style={{"width":"85%"}} />
+                          style={{"width":"88%"}} />
                     </div>
                     <small>MongoDB</small>
                     <div className="progress">
@@ -140,7 +143,7 @@ const About = () => {
                           aria-valuenow="80" 
                           aria-valuemin="0" 
                           aria-valuemax="100" 
-                          style={{"width":"80%"}} />
+                          style={{"width":"85%"}} />
                     </div>
                     <small>MySQL</small>
                     <div className="progress">
@@ -150,7 +153,17 @@ const About = () => {
                           aria-valuenow="80" 
                           aria-valuemin="0" 
                           aria-valuemax="100" 
-                          style={{"width":"80%"}} />
+                          style={{"width":"90%"}} />
+                    </div>
+                    <small>Python</small>
+                    <div className="progress">
+                        <div 
+                          className="progress-bar progress-bar-striped" 
+                          role="progressbar" 
+                          aria-valuenow="80" 
+                          aria-valuemin="0" 
+                          aria-valuemax="100" 
+                          style={{"width":"70%"}} />
                     </div>
                 </div>
               </div>
