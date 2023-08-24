@@ -15,8 +15,7 @@ Project is created with:
 * React
 * Bootstrap v5
 * Framer Motion
-* Express
-* Nodemailer
+* EmailJS
 	
 ## Setup
 To run this project, install it locally using npm:

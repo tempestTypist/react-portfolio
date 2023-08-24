@@ -7,9 +7,9 @@ import alienRight from "../assets/images/alien-hand-right.png"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-const SERVICE_ID = "service_adwgep2";
-const TEMPLATE_ID = "template_j9jc5hc";
-const USER_ID = "EAo2nt3-C2KMKWIZl";
+const serviceID = process.env.REACT_APP_SERVICE_ID || process.env.SERVICE_ID;
+const templateID = process.env.REACT_APP_TEMPLATE_ID || process.env.TEMPLATE_ID;
+const userID = process.env.REACT_APP_USER_ID || process.env.USER_ID;
 
 const Contact = () => {
   const control = useAnimation()
@@ -31,7 +31,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+    emailjs.sendForm(serviceID, templateID, e.target, userID)
       .then((result) => {
         Swal.fire({
           icon: 'success',
