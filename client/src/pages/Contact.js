@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 import alien from "../assets/images/alien-head.png"
 import alienLeft from "../assets/images/alien-hand-left.png"
 import alienRight from "../assets/images/alien-hand-right.png"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
+const SERVICE_ID = "service_adwgep2";
+const TEMPLATE_ID = "template_j9jc5hc";
+const USER_ID = "EAo2nt3-C2KMKWIZl";
+
 const Contact = () => {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [status, setStatus] = useState("Submit");
-
   const control = useAnimation()
 	const [ref, inView] = useInView({
     triggerOnce: true,
@@ -31,41 +29,24 @@ const Contact = () => {
     }
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  }
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    const URL = "https://tempest-portfolio.herokuapp.com/contact"
-
-    let response = await fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formState),
-    });
-    
-    let result = await response.json();
-    alert(result.status);
-
-    if (result.status === "Message Sent!") {
-      resetForm();
-    }
-
-    setStatus("Submit");
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+      .then((result) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent Successfully'
+        })
+      }, (error) => {
+        console.log(error.text);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops, something went wrong',
+          text: error.text,
+        })
+      });
+    e.target.reset()
   };
-
-  const resetForm = () => {
-    setFormState({ name: '', email: '', message: '',})
-  }
 
   useEffect(() => {
     if (inView) {
@@ -89,16 +70,14 @@ const Contact = () => {
           <span className="card-title px-4">MAKE CONTACT</span>
           <img src={alienRight} alt="Alien peace sign" className="alien-hand-right" />
         </div>
-        <form className="contact-form" onSubmit={handleSubmit} method="POST">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="input-container">
             <input 
               type="text" 
               aria-describedby="name"
               id="name" 
-              name="name" 
-              value={formState.name} 
-              onChange={handleChange} 
-              required="required"
+              name="user_name" 
+              required
             />
             <label htmlFor="name">Name</label>
             <div className="bar"></div>
@@ -108,10 +87,8 @@ const Contact = () => {
               type="email" 
               aria-describedby="email"
               id="email" 
-              name="email" 
-              value={formState.email} 
-              onChange={handleChange} 
-              required="required"
+              name="user_email" 
+              required
             />
             <label htmlFor="email">Email</label>
             <div className="bar"></div>
@@ -121,11 +98,8 @@ const Contact = () => {
               type="text"  
               aria-describedby="message"
               id="message" 
-              name="message" 
-              value={formState.message} 
-              onChange={handleChange} 
-              rows="4"
-              required="required"
+              name="user_message" 
+              required
             />
             <label htmlFor="message">Message</label>
             <div className="bar"></div>
@@ -134,7 +108,7 @@ const Contact = () => {
             <button 
               type="submit"
               className="btn">
-                {status}
+                Submit
             </button>
           </div>
         </form>
