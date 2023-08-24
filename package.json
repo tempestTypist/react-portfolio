@@ -1,7 +1,6 @@
 {
   "name": "portfolio-client",
   "version": "1.0.0",
-  "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
