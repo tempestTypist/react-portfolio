@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import alien from "../assets/images/alien-head.png"
 import alienLeft from "../assets/images/alien-hand-left.png"
