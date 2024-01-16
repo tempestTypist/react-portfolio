@@ -16,9 +16,9 @@ const ThemeChanger = () => {
 				</div>
 				<ul className="list-group">
 					<li className="list-group-item">Default</li>
-					<li className="list-group-item">Space</li>
 					<li className="list-group-item">Goth</li>
-					<li className="list-group-item">Arcade</li>
+					<li className="list-group-item">Space</li>
+					<li className="list-group-item">Vaporwave</li>
 				</ul>
 				</>
 			)}

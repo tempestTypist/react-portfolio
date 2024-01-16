@@ -49,10 +49,7 @@ const About = () => {
           <div className="card p-4">
             <h1 className="fw-bold mb-0">I am a Web Developer.</h1>
             <h4 className="mb-4">(And Illustrator, sometimes.)</h4>
-            My first real delve into coding comes from when I took an interest in game modding - specifically, I wanted to add a couple items to a survival game I was playing on Steam. With no prior knowledge of game development, I spent days combing through files written in Lua, taking items of similar function already existing in the game and cloning them, splicing them together, and modifying them to suit my needs. Loading that game up and seeing my custom items on the screen gave me my first addicting taste of success, and writing code has been my life ever since!
-            <br/>
-            <br/>
-            I've been working as a freelance web developer doing the odd job here and there since 2016, but I've been messing around with front-end web development since I was just a kid on Piczo.com. As of December 2021, I've graduated UTOR's full stack bootcamp and continue learning new languages in my spare time. I am looking to further my skills in building full stack applications and to gain more experience in the web development field, so if you're looking for an enthusiastic and highly motivated web developer, please contact me at thetempesttypist@gmail.com or using the form at the bottom of this page. Let's build your dream-site together!
+            <p>I am on a mission to eradicate uninspired web design! Introducing a fresh and vibrant perspective to web development, I am passionate about breathing life into digital spaces with exciting, diverse, and captivating designs. Through this endeavor, I aim to contribute to a digital landscape that not only reflects the ever-evolving nature of technology but also resonates with the hearts and minds of those who interact with it.</p>
           </div>
         </motion.div>
       </motion.div>	
