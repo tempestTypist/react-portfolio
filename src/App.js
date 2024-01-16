@@ -2,6 +2,7 @@ import { React } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ThemeChanger from './components/ThemeChanger';
 import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
@@ -20,6 +21,7 @@ const App = () => {
 						<About />
 						<Work />
 						<Contact />
+						<ThemeChanger />
 					</Col>
 				</Row>
 			<Footer />
