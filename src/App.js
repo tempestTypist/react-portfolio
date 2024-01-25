@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React, { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,21 +11,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles/style.css';
 
 const App = () => {
+	const [theme, setTheme] = useState("default")
 
 	return (
-		<>
-			<Header />
+		<div className={"theme-" + theme}>
+			{/* <Header /> */}
 				<Row>
 					<Col>
-						<Home />
-						<About />
+						<Home theme={theme} />
+						{/* <About />
 						<Work />
-						<Contact />
-						<ThemeChanger />
+						<Contact /> */}
+						<ThemeChanger setTheme={setTheme} />
 					</Col>
 				</Row>
-			<Footer />
-		</>
+			{/* <Footer /> */}
+		</div>
 	);
 };
 

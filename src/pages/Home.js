@@ -2,7 +2,9 @@ import React from 'react'
 import minime from '../assets/images/mini-me.png'
 import { motion } from "framer-motion"
 
-const Home = () => {
+const Home = ({ theme }) => {
+
+  console.log(theme)
 
   const handleMouseMove = (event) => {
     let stars = document.getElementById('stars')
@@ -21,41 +23,62 @@ const Home = () => {
     stars.style.setProperty('--y', 0)
   }
 
-  return (
-    <section id="home" className="banner"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}>
-      <div id="stars" className="stars">
-      </div>
-      <div id="hero" className="hero">
-        <motion.div className="hero-text col-12 offset-md-4 col-md-4"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3,
-              ease: [0, 0.71, 0.2, 1.01]
-            }}>
-          <p className="lead px-4">hi there! i'm</p>
-          <h1 className="display-4 px-4">Summer Villeneuve</h1>
-        </motion.div>
-        <div className="hero-img-wrapper col-12 col-md-4">
-          <motion.img 
-            className="hero-img" 
-            initial={{ y: -800 }}
-            animate={{ y: 0 }}
-            transition={{
-              type: "spring",
-              bounce: 0.4,
-              duration: 1.8,
-              delay: 0.5
-            }}
-            src={minime} 
-            alt="Mini-me"/>
+  if (theme === "space") {
+    return (
+      <section id="home" className="banner"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}>
+        <div id="stars" className="stars">
         </div>
-      </div>
-    </section>
-  );
+        <div id="hero" className="hero">
+          <motion.div className="hero-text col-12 offset-md-4 col-md-4"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}>
+            <p className="lead px-4">hi there! i'm</p>
+            <h1 className="display-4 px-4">Summer Villeneuve</h1>
+          </motion.div>
+          <div className="hero-img-wrapper col-12 col-md-4">
+            <motion.img 
+              className="hero-img" 
+              initial={{ y: -800 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                bounce: 0.4,
+                duration: 1.8,
+                delay: 0.5
+              }}
+              src={minime} 
+              alt="Mini-me"/>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  if (theme === "default") {
+    return (
+      <section className="banner">
+          <div class="box-canvas">
+            <div class="puddle"></div>
+            <div class="candle">
+              <div class="drip"></div>
+              <div class="drip-left"></div>
+            </div>
+            <div class="flame-wrapper">
+              <div class="flame-outer"></div>
+              <div class="flame-inner"></div>
+            </div>
+            <div class="wick"></div>
+          </div>
+      </section>
+    );
+  }
 }
 
 export default Home;

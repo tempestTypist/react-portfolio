@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'
 
-const ThemeChanger = () => {
+const ThemeChanger = ({ setTheme }) => {
 	const [toggle, setToggle] = useState(false)
 
 	return (
@@ -15,10 +15,11 @@ const ThemeChanger = () => {
 					<h3 className="ms-2 mb-0">Theme Changer</h3>
 				</div>
 				<ul className="list-group">
-					<li className="list-group-item">Default</li>
-					<li className="list-group-item">Goth</li>
-					<li className="list-group-item">Space</li>
-					<li className="list-group-item">Vaporwave</li>
+					<li className="list-group-item" onClick={() => setTheme("default")}>Default</li>
+					<li className="list-group-item" onClick={() => setTheme("goth")}>Goth</li>
+					<li className="list-group-item" onClick={() => setTheme("space")}>Space</li>
+					<li className="list-group-item" onClick={() => setTheme("vaporwave")}>Vaporwave</li>
+					<li className="list-group-item" onClick={() => setTheme("dreamy")}>Dreamy</li>
 				</ul>
 				</>
 			)}
