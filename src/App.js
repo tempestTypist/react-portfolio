@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles/style.css';
 
 const App = () => {
-	const [theme, setTheme] = useState("default")
+	const [theme, setTheme] = useState("space")
 
 	return (
 		<div className={"theme-" + theme}>
@@ -19,9 +19,9 @@ const App = () => {
 				<Row>
 					<Col>
 						<Home theme={theme} />
-						{/* <About />
+						<About />
 						<Work />
-						<Contact /> */}
+						<Contact />
 						<ThemeChanger setTheme={setTheme} />
 					</Col>
 				</Row>
