@@ -1,10 +1,9 @@
 import React from 'react'
 import minime from '../assets/images/mini-me.png'
 import { motion } from "framer-motion"
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Home = ({ theme }) => {
-
-  console.log(theme)
 
   const handleMouseMove = (event) => {
     let stars = document.getElementById('stars')
@@ -21,6 +20,26 @@ const Home = ({ theme }) => {
     let stars = document.getElementById('stars')
     stars.style.setProperty('--x', 0)
     stars.style.setProperty('--y', 0)
+  }
+
+  if (theme === "default") {
+    return (
+      <section id="home" className="banner">
+        <div className="hero">
+          <motion.div className="hero-text col-4"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}>
+            <p className="lead m-0">hi there! i'm</p>
+            <h1 className="display-4 px-4">Summer Villeneuve</h1>
+          </motion.div>
+        </div>
+      </section>
+    )
   }
 
   if (theme === "space") {
@@ -61,7 +80,7 @@ const Home = ({ theme }) => {
     )
   }
 
-  if (theme === "default") {
+  if (theme === "tarot") {
     return (
       <section className="banner">
           <div class="box-canvas">
