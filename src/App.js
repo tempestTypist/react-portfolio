@@ -16,10 +16,12 @@ const App = () => {
 	return (
 		<div className={"theme-" + theme}>
 			<Header />
-				<Home theme={theme} />
-				<About theme={theme} />
-				<Work theme={theme} />
-				<Contact theme={theme} />
+				<Container fluid>
+					<Home theme={theme} />
+					<About theme={theme} />
+					<Work theme={theme} />
+					<Contact theme={theme} />
+				</Container>
 				<ThemeChanger setTheme={setTheme} />
 			<Footer />
 		</div>

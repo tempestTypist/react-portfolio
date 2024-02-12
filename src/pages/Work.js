@@ -1,7 +1,12 @@
 import React from 'react'
 import Slider from '../components/Slider'
+import { Container, Row, Col } from 'react-bootstrap';
+import dividerTop from '../assets/images/default/page-divider-1.svg'
+import dividerBot from '../assets/images/default/page-divider-2.svg'
 
-export default function Work() {
+import minime from '../assets/images/mini-me.png'
+
+export default function Work({ theme }) {
   const slideData = [
     {
       index: 0,
@@ -34,9 +39,13 @@ export default function Work() {
   ]
 
   return (
-    <section id="work" className="py-3">
-      <h1 className="pb-3">My Work</h1>
-      <Slider heading="Example Slider" slides={slideData} />
-    </section>
+    <>
+      {theme === "default" ? <img src={dividerTop} className="work-divider-top w-100" /> : null}
+      <Row as={"section"} id="work">
+        <h1 className="pb-3">My Work</h1>
+        <Slider heading="Example Slider" slides={slideData} />
+      </Row>
+      {theme === "default" ? <img src={dividerBot} className="work-divider-bot w-100" /> : null}
+    </>
   );
 }

@@ -23,7 +23,7 @@ const Slide = (props) => {
       onClick={handleSlideClick}
     >
 
-      <div className="card shadow-sm border-0 rounded">
+      <div className="card border-0">
         <div className="slide__image-wrapper">
           <img 
             src={src}
