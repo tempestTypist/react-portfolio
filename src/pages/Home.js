@@ -62,6 +62,16 @@ const Home = ({ theme }) => {
     )
   }
 
+  if (theme === "vaporwave") {
+    return (
+      <Row as={"section"} id="home" className="banner">
+        <div className="hero">
+          <div></div>
+        </div>
+      </Row>
+    )
+  }
+
   if (theme === "tarot") {
     return (
       <section className="banner">

@@ -52,6 +52,10 @@
 
 }
 
+:root div[class$="vaporwave"] {
+  --bg-primary: #da85db;
+}
+
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
@@ -60,6 +64,25 @@ body {
 #root > div {
   background-color: var(--bg-primary);
 }
+
+#root > div.theme-vaporwave {
+  background: 
+    linear-gradient(0deg, rgba(14,12,162,.75) 0%, rgba(76,57,184,.75) 24%, rgba(218,133,219,.75) 88%) no-repeat,
+    linear-gradient(rgb(68, 76, 247, .75) 1px, transparent 1px) repeat, 
+    linear-gradient(to right, rgb(68, 76, 247, .75) 1px, transparent 1px) repeat;
+  background-size: 
+    cover, 
+    40px 40px, 
+    40px 40px;
+}
+
+/* div.theme-vaporwave::after {
+  content: "";
+  background-color: transparent;
+  opacity: 0.8;
+  background-image:  linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, transparent 1px);
+  background-size: 40px 40px;
+} */
 
 a:link {
   font-weight: bold;
@@ -183,6 +206,47 @@ a:active {
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
+}
+
+.theme-vaporwave .banner {
+  width: 100vw;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-perspective-origin: top center;
+          perspective-origin: top center;
+}
+
+.theme-vaporwave .banner .hero {
+  position: relative;
+  width: 100vw;
+  height: 40vh;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.theme-vaporwave .banner .hero div {
+  position: absolute;
+  background-color: rgba(218,133,219, 1);
+  background: 
+    linear-gradient(0deg, rgba(14,12,162,.75) 0%, rgba(76,57,184,.75) 24%, rgba(218,133,219,.75) 88%) no-repeat,
+    linear-gradient(rgb(68, 76, 247, .75) 1px, transparent 1px) repeat, 
+    linear-gradient(to right, rgb(68, 76, 247, .75) 1px, transparent 1px) repeat;
+  background-size: 
+    cover, 
+    40px 40px, 
+    40px 40px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+          transform: rotateX(90deg) translateZ(100px);
+          
 }
 
 .theme-space .banner {
@@ -1027,7 +1091,7 @@ fieldset[disabled] .btn {
   display: none;
 }
 
-.theme-default .icon {
+.theme-default .input-container .icon {
   color: #57565c;
   height: 1.3rem;
   position: absolute;

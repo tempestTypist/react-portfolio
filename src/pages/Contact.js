@@ -18,23 +18,6 @@ const Contact = ({ theme }) => {
   const [contactTitle, setTitle] = useState("Give me a shout!")
   const [titleImg, setImg] = useState()
 
-  const control = useAnimation()
-	const [ref, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: '100px 0px'
-  })
-
-  const sectionVariant = {
-    hidden: { opacity: 0, scale: 0 },
-    show: { 
-      opacity: 1, 
-      scale: 1, 
-      transition: { 
-        duration: .5
-      } 
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs.sendForm(serviceID, templateID, e.target, userID)
@@ -55,9 +38,6 @@ const Contact = ({ theme }) => {
   };
 
   useEffect(() => {
-    if (inView) {
-      control.start("show");
-    };
     if (theme === "space") {
       setTitle("MAKE CONTACT");
       setImg(alienHand);
@@ -65,17 +45,12 @@ const Contact = ({ theme }) => {
       setTitle("Give me a Shout!")
       setImg(speaker);
     }
-  }, [control, inView, theme]);
+  }, [theme]);
 
   return (
     <Row as={"section"} id="contact">
       <Col lg={8}>
-        <motion.div 
-          ref={ref}
-          className="card"
-          variants={sectionVariant}
-          initial="hidden"
-          animate={control}>
+        <div className="card">
           <div className="card-body d-flex justify-content-center">
             {theme === "space" ? <img src={alien} alt="Alien" className="card__image" /> : null}
             <div className="d-flex flex-row align-items-end mb-4">
@@ -83,70 +58,68 @@ const Contact = ({ theme }) => {
               <span className="card-title px-4">{contactTitle}</span>
               <img src={titleImg} className="contact-title-img flip" />
             </div>
-              {/* {theme === "default" ? <Col as={"img"} src={titleImg} sm={3} className="speaker" /> : null} */}
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="input-container">
-                    <input 
-                      type="text" 
-                      aria-describedby="name"
-                      placeholder="Name"
-                      className="form-control"
-                      id="name" 
-                      name="user_name" 
-                      required
-                    />
-                    <label htmlFor="name">
-                      <FontAwesomeIcon className="icon me-2" icon={faUser} />
-                      <span className="label">Name</span>
-                    </label>
-                    <div className="bar"></div>
-                  </div>
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="input-container">
+                <input 
+                  type="text" 
+                  aria-describedby="name"
+                  placeholder="Name"
+                  className="form-control"
+                  id="name" 
+                  name="user_name" 
+                  required
+                />
+                <label htmlFor="name">
+                  <FontAwesomeIcon className="icon me-2" icon={faUser} />
+                  <span className="label">Name</span>
+                </label>
+                <div className="bar"></div>
+              </div>
 
-                  <div className="input-container">
-                    <input 
-                      type="email" 
-                      aria-describedby="email"
-                      placeholder="E-mail"
-                      className="form-control"
-                      id="email" 
-                      name="user_email" 
-                      required
-                    />
-                    <label htmlFor="email">
-                      <FontAwesomeIcon className="icon me-2" icon={faEnvelope} />
-                      <span className="label">Email</span>
-                    </label>
-                    <div className="bar"></div>
-                  </div>
+              <div className="input-container">
+                <input 
+                  type="email" 
+                  aria-describedby="email"
+                  placeholder="E-mail"
+                  className="form-control"
+                  id="email" 
+                  name="user_email" 
+                  required
+                />
+                <label htmlFor="email">
+                  <FontAwesomeIcon className="icon me-2" icon={faEnvelope} />
+                  <span className="label">Email</span>
+                </label>
+                <div className="bar"></div>
+              </div>
 
-                  <div className="input-container">
-                    <input 
-                      type="text" 
-                      aria-describedby="message"
-                      placeholder="Message"
-                      className="form-control"
-                      id="message" 
-                      name="user_message" 
-                      required
-                    />
-                    <label htmlFor="message">
-                      <FontAwesomeIcon className="icon me-2" icon={faComment} />
-                      <span className="label">Message</span>
-                    </label>
-                    <div className="bar"></div>
-                  </div>
+              <div className="input-container">
+                <input 
+                  type="text" 
+                  aria-describedby="message"
+                  placeholder="Message"
+                  className="form-control"
+                  id="message" 
+                  name="user_message" 
+                  required
+                />
+                <label htmlFor="message">
+                  <FontAwesomeIcon className="icon me-2" icon={faComment} />
+                  <span className="label">Message</span>
+                </label>
+                <div className="bar"></div>
+              </div>
 
-                  <div className="text-center mb-2">
-                    <button 
-                      type="submit"
-                      className="btn">
-                        Submit
-                    </button>
-                  </div>
-                </form>
-              {/* {theme === "default" ? <Col as={"img"} src={titleImg} sm={3} className="speaker" /> : null} */}
+              <div className="text-center mb-2">
+                <button 
+                  type="submit"
+                  className="btn">
+                    Submit
+                </button>
+              </div>
+            </form>
           </div>
-        </motion.div>
+        </div>
       </Col>
     </Row>
   );
