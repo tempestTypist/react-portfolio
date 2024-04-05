@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Slide = (props) => {
   const { src, dsc, headline, index, href } = props.slide
@@ -15,6 +15,20 @@ const Slide = (props) => {
   
   const imageLoaded = (event) => {
     event.target.style.opacity = 1
+  }
+
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  const resetMousePosition = () => {
+    setX(0);
+    setY(0);
+  };
+
+  const handleMouseMove = (e) => {
+    const btnBounds = document.querySelector('.slide--current .btn').getBoundingClientRect()
+    setX(e.clientX- btnBounds.x - btnBounds.width / 2)
+    setY(e.clientY - btnBounds.y - btnBounds.height / 2)
   }
 
   return (
@@ -36,7 +50,16 @@ const Slide = (props) => {
           <div className="p-4">
             <h5 className="mb-0">{headline}</h5>
             <p className="small">{dsc}</p>
-            <a href={href} target="_blank" rel="noopener noreferrer"><button type="button" className="btn">Check it out</button></a>
+            <a href={href} target="_blank" rel="noopener noreferrer">
+              <button 
+                type="button" 
+                className="btn" 
+                onMouseMove={handleMouseMove} 
+                onMouseLeave={() => {resetMousePosition()}}
+                style={{"--x": x, "--y": y}}>
+                  Check it out
+              </button>
+            </a>
           </div>
         </div>
       </div>

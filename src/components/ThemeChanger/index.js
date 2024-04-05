@@ -17,7 +17,7 @@ const ThemeChanger = ({ setTheme }) => {
 				<ul className="list-group">
 					<li className="list-group-item" onClick={() => setTheme("default")}>Default</li>
 					<li className="list-group-item" onClick={() => setTheme("space")}>Space</li>
-					{/* <li className="list-group-item" onClick={() => setTheme("vaporwave")}>Vaporwave</li> */}
+					<li className="list-group-item" onClick={() => setTheme("vaporwave")}>Vaporwave</li>
 				</ul>
 				</>
 			)}

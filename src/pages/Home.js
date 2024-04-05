@@ -1,35 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import minime from '../assets/images/mini-me.png'
 import neonT from '../assets/images/default/neon-tl.svg'
 import neonB from '../assets/images/default/neon-br.svg'
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import { Container, Row, Col } from 'react-bootstrap';
+import { AnimatedTitle } from "../components/AnimatedTitle/index.js";
 
 const Home = ({ theme }) => {
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
 
-  const handleMouseMove = (event) => {
-    let stars = document.getElementById('stars')
-    let hero = document.getElementById('hero')
-    let s = stars.getBoundingClientRect()
-    let h = hero.getBoundingClientRect()
-
-    hero.style.setProperty('--x', event.clientX - (s.left + Math.floor(s.width / 2)))
-    stars.style.setProperty('--x', event.clientX - (s.left + Math.floor(s.width / 2)))
-    stars.style.setProperty('--y', event.clientY - (h.top + Math.floor(h.height / 2)))
-  }
-  
-  const handleMouseLeave = () => {    
-    let stars = document.getElementById('stars')
-    stars.style.setProperty('--x', 0)
-    stars.style.setProperty('--y', 0)
+  const handleMouseMove = (e) => {
+    const bannerBounds = document.getElementById('hero').getBoundingClientRect()
+    setX(e.clientX- bannerBounds.x - bannerBounds.width / 2)
+    setY(e.clientY - bannerBounds.y - bannerBounds.height / 2)
   }
 
   if (theme === "space") {
     return (
-      <Row as={"section"} id="home" className="banner"
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}>
-        <div id="stars" className="stars">
+      <Row as={"section"} id="home" className="banner" onMouseMove={handleMouseMove}>
+        <div id="stars" className="stars" style={{"--x": x, "--y": y}}>
         </div>
         <div id="hero" className="hero">
           <motion.div className="hero-text col-12 offset-md-4 col-md-4"
@@ -66,7 +56,10 @@ const Home = ({ theme }) => {
     return (
       <Row as={"section"} id="home" className="banner">
         <div className="hero">
-          <div></div>
+          <div className="title-wrapper">
+            <AnimatedTitle>Summer Villeneuve</AnimatedTitle>
+          </div>
+          <div className="lines"></div>
         </div>
       </Row>
     )
@@ -75,17 +68,17 @@ const Home = ({ theme }) => {
   if (theme === "tarot") {
     return (
       <section className="banner">
-          <div class="box-canvas">
-            <div class="puddle"></div>
-            <div class="candle">
-              <div class="drip"></div>
-              <div class="drip-left"></div>
+          <div className="box-canvas">
+            <div className="puddle"></div>
+            <div className="candle">
+              <div className="drip"></div>
+              <div className="drip-left"></div>
             </div>
-            <div class="flame-wrapper">
-              <div class="flame-outer"></div>
-              <div class="flame-inner"></div>
+            <div className="flame-wrapper">
+              <div className="flame-outer"></div>
+              <div className="flame-inner"></div>
             </div>
-            <div class="wick"></div>
+            <div className="wick"></div>
           </div>
       </section>
     );

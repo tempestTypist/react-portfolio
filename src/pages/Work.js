@@ -4,8 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import dividerTop from '../assets/images/default/page-divider-1.svg'
 import dividerBot from '../assets/images/default/page-divider-2.svg'
 
-import minime from '../assets/images/mini-me.png'
-
 export default function Work({ theme }) {
   const slideData = [
     {
@@ -28,24 +26,17 @@ export default function Work({ theme }) {
       dsc: 'An organizational tool built in React. Since it was only ever intended to be used by me, it would save any changes to local storage - unfortunately Heroku does not have any persistant storage, so Ive removed the saving for demo purposes.',
       src: 'https://i.ibb.co/D4GZCnP/thumbnail-Dayplanner.png',
       href: 'https://react-dayplanner.herokuapp.com/'
-    },
-    {
-      index: 3,
-      headline: 'Spooky Sights',
-      dsc: 'Our final project in coding bootcamp, this was a collaborative effort to build an API for finding haunted houses by state.',
-      src: 'https://github.com/vcapella/Cobweb-coders/raw/khaleel/screenshot1.png',
-      href: 'https://spooky-sights.herokuapp.com/homepage'
     }
   ]
 
   return (
-    <>
-      {theme === "default" ? <img src={dividerTop} className="work-divider-top w-100" /> : null}
-      <Row as={"section"} id="work">
+    <Row as={"section"} id="work" className="mt-4">
+      {theme === "default" ? <img src={dividerTop} className="work-divider-top" /> : null}
+      <div>
         <h1 className="pb-3">My Work</h1>
         <Slider heading="Example Slider" slides={slideData} />
-      </Row>
-      {theme === "default" ? <img src={dividerBot} className="work-divider-bot w-100" /> : null}
-    </>
+      </div>
+      {theme === "default" ? <img src={dividerBot} className="work-divider-bot" /> : null}
+    </Row>
   );
 }

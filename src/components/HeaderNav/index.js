@@ -26,7 +26,7 @@ const Navigation = () => {
   };
   
   return (
-      <motion.ul className="navbar-nav ms-auto mt-2 mt-lg-0 me-lg-2" variants={navVariants}>
+      <motion.ul className="navbar-nav ms-auto mt-2 mt-lg-0 me-lg-2" v ariants={navVariants}>
 
         <motion.li 
           className="nav-item"
