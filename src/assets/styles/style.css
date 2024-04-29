@@ -2570,8 +2570,47 @@ ul.skills li div:first-child {
   border-top-left-radius: .5rem;
   border-bottom-left-radius: .5rem;
   text-align: center;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+}
+
+.theme-changer > svg[data-icon="wand-magic"] {
+  -webkit-animation: themewand 4s .1s ease-in-out infinite;
+     -moz-animation: themewand 4s .1s ease-in-out infinite;
+          animation: themewand 4s .1s ease-in-out infinite;
+}
+
+.theme-changer > svg[data-icon="plus"] {
+  color: gold;
+  position: absolute;
+  left: var(--l);
+  top: var(--t);
+  /* -webkit-animation: themesparkles 4s .1s ease-in-out infinite;
+  -moz-animation: themesparkles 4s .1s ease-in-out infinite;
+       animation: themesparkles 4s .1s ease-in-out infinite; */
+}
+
+.theme-changer > svg:nth-child(0n+1 of .fa-plus) {
+  --l: -100px;
+  --t: 0;
+}
+
+.theme-changer > svg:nth-child(2n of .fa-plus) {
+  --l: -80px;
+  --t: -70px;
+}
+
+.theme-changer > svg:nth-child(3n of .fa-plus) {
+  --l: -10px;
+  --t: -100px;
+}
+
+.theme-changer > svg:nth-child(4n of .fa-plus) {
+  --l: -95px;
+  --t: -35px;
+}
+
+.theme-changer > svg:nth-child(5n of .fa-plus) {
+  --l: -50px;
+  --t: -90px;
 }
 
 /***************************/
@@ -2730,6 +2769,21 @@ ul.skills li div:first-child {
   30% { transform: scaleX(-1) translate(90px) rotate(-20deg);}
   40% { transform: scaleX(-1) translate(90px) rotate(0);}
   100% { transform: scaleX(-1) translate(90px) rotate(0); }
+}
+
+@keyframes themewand {
+  0% { transform: scaleX(-1) rotate(0); }
+  75% { transform: scaleX(-1) rotate(0); }
+  80% { transform: scaleX(-1) rotate(10deg);}
+  85% { transform: scaleX(-1) rotate(0);}
+  90% { transform: scaleX(-1) rotate(10deg);}
+  100% { transform: scaleX(-1) rotate(0); }
+}
+
+@keyframes themesparkles {
+  0% { opacity: 0; left: calc(var(--l) + 0); top:calc(var(--t) + 0); transform: rotate(0); }
+  75% { opacity: 1; left: calc(var(--l) + 0); top:calc(var(--t) + 0); transform: rotate(0); }
+  100% { opacity: 0; left:calc(var(--l) + -100px); top: calc(var(--t) + -100px); transform: rotate(360deg); }
 }
 
 @keyframes animateGlow {

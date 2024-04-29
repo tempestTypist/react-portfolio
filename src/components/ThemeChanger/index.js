@@ -1,17 +1,26 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'
+import { faWandMagic, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const ThemeChanger = ({ setTheme }) => {
 	const [toggle, setToggle] = useState(false)
 
 	return (
 		<div className="theme-changer" onClick={() => setToggle(!toggle)} >
-			{toggle ? <></> : <FontAwesomeIcon icon={faWandMagicSparkles} size="xl" />}
+			{toggle ? <></> : 
+			<>
+				<FontAwesomeIcon icon={faWandMagic} size="xl" />
+				<FontAwesomeIcon icon={faPlus} size="xl" />
+				<FontAwesomeIcon icon={faPlus} size="xl" />
+				<FontAwesomeIcon icon={faPlus} size="xl" />
+				<FontAwesomeIcon icon={faPlus} size="xl" />
+				<FontAwesomeIcon icon={faPlus} size="xl" />
+				<FontAwesomeIcon icon={faPlus} size="xl" />
+			</>}
 			{toggle && (
 				<>
 				<div className="d-flex align-items-center mb-2">
-					<FontAwesomeIcon icon={faWandMagicSparkles} size="xl" />
+					<FontAwesomeIcon icon={faWandMagic} size="xl" />
 					<h3 className="ms-2 mb-0">Theme Changer</h3>
 				</div>
 				<ul className="list-group">
