@@ -201,20 +201,21 @@ p {
               0px 8px 16px rgba(218, 0, 255, 0.5);
 }
 
+.theme-vaporwave .navbar-nav,
+.theme-vaporwave .navbar-nav .nav-link.active {
+  font-family: var(--title-font-secondary);
+  letter-spacing: 2px;
+  color: #000;
+  filter: drop-shadow(-1px -1px #00ffff) drop-shadow(1px 1px #ff00ff);
+}
+
 /****** redo later, no longer works/needed, should be matched to theme *******/
 
-.navbar-nav .nav-link {
-	color: #b07edf;
+.navbar-nav,
+.navbar-nav .nav-link.active {
+	color: #fff;
   font-family: var(--title-font-primary);
   font-size: 1.4rem
-}
-
-.navbar-nav .nav-link:hover {
-	color: #dacdf5
-}
-
-.navbar-nav .nav-link.active {
-	color: #eee7fd
 }
 
 @media (max-width: 991.98px) {
@@ -2499,7 +2500,7 @@ ul.skills li div:first-child {
   border-style: double;
   border-color: #00ffff #ff00ff #ff00ff #00ffff;
   height: 3rem;
-  /* width: calc(100% ) */
+  width: calc(100%)
 }
 
 .theme-vaporwave .progress {
@@ -2647,10 +2648,6 @@ ul.skills li div:first-child {
 
 .theme-vaporwave .footer-divider {
   position: relative;
-  /* background-image: url("../images/vaporwave/crystal-pepsi.png"), url("../images/vaporwave/crystal-pepsi.png");
-  background-repeat: no-repeat;
-  background-position: left, right;
-  background-size: contain */
 }
 
 .theme-vaporwave .footer-divider::before,
@@ -2685,6 +2682,24 @@ ul.skills li div:first-child {
   background-repeat: no-repeat;
   background-size:  400px 250px, auto, auto;
   right: -5%;
+}
+
+@media (max-width: 991.98px) { 
+  .theme-vaporwave .footer-divider::before {
+    left: auto;
+    right: 0
+  }
+
+  .theme-vaporwave .footer-divider::after {
+    left: 0
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .theme-vaporwave .footer-divider::before,
+  .theme-vaporwave .footer-divider::after {
+    display: none;
+  }
 }
 
 .theme-vaporwave footer {
