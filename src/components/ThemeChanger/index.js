@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWandMagic, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faWandMagic, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
 
 const ThemeChanger = ({ setTheme }) => {
 	const [toggle, setToggle] = useState(false)
@@ -10,12 +10,11 @@ const ThemeChanger = ({ setTheme }) => {
 			{toggle ? <></> : 
 			<>
 				<FontAwesomeIcon icon={faWandMagic} size="xl" />
-				<FontAwesomeIcon icon={faPlus} size="xl" />
-				<FontAwesomeIcon icon={faPlus} size="xl" />
-				<FontAwesomeIcon icon={faPlus} size="xl" />
-				<FontAwesomeIcon icon={faPlus} size="xl" />
-				<FontAwesomeIcon icon={faPlus} size="xl" />
-				<FontAwesomeIcon icon={faPlus} size="xl" />
+				<FontAwesomeIcon icon={faStar} className="icon" size="xl" />
+				<FontAwesomeIcon icon={faStar} className="icon" size="xl" />
+				<FontAwesomeIcon icon={faStar} className="icon" size="xl" />
+				<FontAwesomeIcon icon={faPlus} className="icon" size="xl" />
+				<FontAwesomeIcon icon={faPlus} className="icon" size="xl" />
 			</>}
 			{toggle && (
 				<>
