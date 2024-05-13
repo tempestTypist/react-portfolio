@@ -6,7 +6,7 @@ const HeaderToggle = ({ toggle }) => {
     <button 
       type="button" 
       aria-label="Toggle navigation"
-      className="navbar-toggler bg-transparent border-0" 
+      className="navbar-toggler bg-transparent ms-auto border-0" 
       onClick={toggle}>
       <svg width="23" height="23" viewBox="0 0 23 23">
         <motion.path

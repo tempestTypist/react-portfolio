@@ -153,8 +153,6 @@ p {
 
 .header-nav {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   position: fixed;
   top: 0;
   height: 56px;
@@ -162,13 +160,8 @@ p {
   z-index: 1030;
   visibility: hidden;
   opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s ease;
 }
-
-@media (max-width: 991.98px) { 
-  .header-nav {
-    justify-content:end
-  }
- }
 
 .theme-space .header-nav {
 	padding: 0.5rem 0;
@@ -196,7 +189,6 @@ p {
             rgba(90,30,188,1) 92%,
             rgba(57,13,188,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3200bf', endColorstr='#390dbc',GradientType=0 );  
-	transition: visibility 0s, opacity 0.2s linear;
 }
 
 .theme-default .header-nav {
@@ -224,10 +216,10 @@ p {
   font-size: 1.4rem
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .offcanvas-collapse {
     position: fixed;
-    top: 56px; /* Height of navbar */
+    top: 56px; 
     bottom: 0;
     left: 100%;
     padding-right: 2rem;
@@ -241,6 +233,13 @@ p {
     visibility: visible;
     transform: translateX(-100%);
   }
+  .theme-vaporwave .offcanvas-collapse {
+    background-color: transparent;
+  }
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0;
 }
 
 .nav-underline .nav-link {
@@ -2580,7 +2579,7 @@ ul.skills li div:first-child {
 }
 
 .theme-changer > svg[data-icon="wand-magic"] {
-  transform-origin: bottom left;
+  transform-origin: bottom;
   -webkit-animation: themewand 4s .1s ease-in-out infinite;
      -moz-animation: themewand 4s .1s ease-in-out infinite;
           animation: themewand 4s .1s ease-in-out infinite;

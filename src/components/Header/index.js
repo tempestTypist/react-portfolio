@@ -23,7 +23,7 @@ const Header = () => {
   return (
 		<motion.nav
 			id="header"
-			className="header-nav navbar navbar-expand-lg" 
+			className="header-nav navbar navbar-expand-md" 
 			aria-label="Main navigation"
 			initial={false}
 			animate={isOpen ? "open" : "closed"}
