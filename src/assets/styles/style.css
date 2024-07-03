@@ -193,10 +193,10 @@ p {
 
 .theme-default .header-nav {
   background: #131313;
-  box-shadow: 0px 1px 2px rgba(218, 0, 255, 0.5), 
-              0px 2px 4px rgba(218, 0, 255, 0.5), 
-              0px 4px 8px rgba(218, 0, 255, 0.5), 
-              0px 8px 16px rgba(218, 0, 255, 0.5);
+  box-shadow: 0px 1px 2px rgba(126, 15, 255, 0.5), 
+              0px 2px 4px rgba(126, 15, 255, 0.5), 
+              0px 4px 8px rgba(126, 15, 255, 0.5), 
+              0px 8px 16px rgba(126, 15, 255, 0.5);
 }
 
 .theme-vaporwave .navbar-nav,
