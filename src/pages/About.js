@@ -24,7 +24,7 @@ const About = ({ theme }) => {
     label: "Website",
     title: "tempest-portfolio",
     icon: iconGlobe,
-    link: "https://tempest-portfolio.herokuapp.com/"
+    link: "https://tempest-typist.com/"
   }, {
     label: "Github",
     title: "tempestTypist",

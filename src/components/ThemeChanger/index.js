@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWandMagic, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
 
-const ThemeChanger = ({ setTheme }) => {
+const ThemeChanger = ({ setTheme, setLoading }) => {
 	const [toggle, setToggle] = useState(false)
+
+	const changeTheme = (theme) => {
+		setLoading(true);
+		setTheme(theme);
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
 
 	return (
 		<div className="theme-changer" onClick={() => setToggle(!toggle)} >
@@ -23,9 +30,9 @@ const ThemeChanger = ({ setTheme }) => {
 					<h3 className="ms-2 mb-0">Theme Changer</h3>
 				</div>
 				<ul className="list-group">
-					<li className="list-group-item" onClick={() => setTheme("default")}>Default</li>
-					<li className="list-group-item" onClick={() => setTheme("space")}>Space</li>
-					<li className="list-group-item" onClick={() => setTheme("vaporwave")}>Vaporwave</li>
+					<li className="list-group-item" onClick={() => changeTheme("default")}>Default</li>
+					<li className="list-group-item" onClick={() => changeTheme("space")}>Space</li>
+					<li className="list-group-item" onClick={() => changeTheme("vaporwave")}>Vaporwave</li>
 				</ul>
 				</>
 			)}

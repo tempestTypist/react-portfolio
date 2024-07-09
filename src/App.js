@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,11 +7,23 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import Loading from "./components/Loading";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles/style.css';
 
 const App = () => {
 	const [theme, setTheme] = useState("default")
+	const [loading, setLoading] = useState(false);
+
+
+	useEffect(() => {
+    setTimeout(() => setLoading(false), 1000);
+  }, [loading]);
+
+	if (loading) {
+    return <Loading />;
+  }
 
 	return (
 		<div className={"theme-" + theme}>
@@ -22,7 +34,7 @@ const App = () => {
 					<Work theme={theme} />
 					<Contact theme={theme} />
 				</Container>
-				<ThemeChanger setTheme={setTheme} />
+				<ThemeChanger setTheme={setTheme} setLoading={setLoading} />
 			<Footer />
 		</div>
 	);

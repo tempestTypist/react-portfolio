@@ -107,6 +107,9 @@ body {
 
 #root > div {
   background-color: var(--bg-primary);
+  /* height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll; */
 }
 
 #root > div.theme-vaporwave {
@@ -158,9 +161,17 @@ p {
   height: 56px;
   width: 100%;
   z-index: 1030;
+  transition: visibility 0.2s, opacity 0.2s ease;
+}
+
+.header-nav.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header-nav.hidden {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.2s, opacity 0.2s ease;
 }
 
 .theme-space .header-nav {
@@ -2814,7 +2825,7 @@ ul.skills li div:first-child {
   0% { opacity: 0; left: 0px; top: 0px; transform: rotate(0); font-size: calc(var(--s) - 1rem) }
   60% { opacity: 0; left: 0px; top: 0px; transform: rotate(0); font-size: calc(var(--s) - 1rem) }
   85% { opacity: 1; left: var(--l); top: var(--t); transform: rotate(360deg); font-size: var(--s) }
-  100% { opacity: 0; left: var(--l); top: var(--t); transform: rotate(180deg); font-size: calc(var(--s) - 1rem) }
+  100% { opacity: 0; left: var(--l); top: var(--t); transform: rotate(360deg); font-size: calc(var(--s) - 1rem) }
 }
 
 @keyframes animateGlow {
@@ -2946,5 +2957,76 @@ ul.skills li div:first-child {
   70% {
       -webkit-transform: scale(1);
       transform: scale(1);
+  }
+}
+
+
+
+#loader-container {
+  max-width: 220px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader path:nth-child(2) {
+  stroke-dasharray: 200%;
+  stroke-dashoffset: 200%;
+  animation: strokeAnimate 2s 0s ease forwards;
+}
+
+#loader path:nth-child(3) {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: strokeAnimate 2s 0.3s ease forwards;
+}
+#loader path:nth-child(4) {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: strokeAnimate 2s 0.9s ease forwards;
+}
+#loader path:nth-child(5) {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: strokeAnimate 2s 1.2s ease forwards;
+}
+#loader path:nth-child(6) {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: strokeAnimate 2s 1.5s ease forwards;
+}
+#loader path:nth-child(7) {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: strokeAnimate 2s 1.8s ease forwards;
+}
+#loader path:nth-child(8) {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: strokeAnimate 2s 2.1s ease forwards;
+}
+
+@keyframes strokeAnimate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #loader-container {
+    max-width: 150px;
+  }
+  #loader {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #loader-container {
+    max-width: 100px;
+  }
+  #loader {
+    width: 100px;
   }
 }

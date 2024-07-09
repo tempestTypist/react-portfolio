@@ -1,33 +1,35 @@
 import React from 'react';
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import HeaderToggle from "../HeaderToggle";
 import HeaderNav from "../HeaderNav";
 
 const Header = () => {
 	const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
+	const [visible, setVisible] = useState(false) 
+	const [position, setPosition] = useState(document.documentElement.scrollTop)
+	const headerClass = visible ? "visible" : "hidden"
 
-	const scrollFunction = () => {
-		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-			document.getElementById("header").style.visibility = "visible";
-			document.getElementById("header").style.opacity = "1";
-		} else {
-			document.getElementById("header").style.visibility = "hidden";
-			document.getElementById("header").style.opacity = "0";
-		}
-	}
-
-	window.onscroll = function() { scrollFunction() };
+	useEffect(() => {
+	 const handleScroll = () => {
+			let moving = document.documentElement.scrollTop
+			
+			setVisible(position < moving || position > 100);
+			setPosition(moving);
+	 };
+	 window.addEventListener("scroll", handleScroll);
+	 return(() => {
+			window.removeEventListener("scroll", handleScroll);
+	 })
+  });
 
   return (
 		<motion.nav
 			id="header"
-			className="header-nav navbar navbar-expand-md" 
+			className={"header-nav " + headerClass + " navbar navbar-expand-md"}
 			aria-label="Main navigation"
 			initial={false}
 			animate={isOpen ? "open" : "closed"}
-			ref={containerRef}
 			>
 			<div className={isOpen ? "navbar-collapse offcanvas-collapse open" : "navbar-collapse offcanvas-collapse closed"}>
 				<HeaderNav />
