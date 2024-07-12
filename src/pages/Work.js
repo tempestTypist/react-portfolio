@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from '../components/Slider'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import dividerTop from '../assets/images/default/page-divider-1.svg'
 import dividerBot from '../assets/images/default/page-divider-2.svg'
 

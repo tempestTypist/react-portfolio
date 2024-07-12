@@ -67,7 +67,8 @@ const Contact = ({ theme }) => {
               <img src={titleImg} className="contact-title-img flip" />
             </div>
 
-            <ContactForm formInputs={formInputs} btnLabel={"Submit"} />
+            {/* <ContactForm formInputs={formInputs} btnLabel={"Submit"} /> */}
+            <p>theTempestTypist@gmail.com</p>
           </div>
         </div>
       </Col>

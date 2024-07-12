@@ -823,28 +823,20 @@ p {
 #about > div {
   display: flex;
   flex-direction: column;
-  flex: 0 0 auto;
-  width: 100%;
 }
 
-#about > div:nth-child(1) {
-  justify-content: space-between !important;
-  align-items: center !important;
+#about > .about-column-left {
+  justify-content: flex-end;
+  align-items: center;
 }
 
-#about > div:nth-child(2) {
-  justify-content: flex-end !important;
+#about > .about-column-right {
+  justify-content: flex-end;
 }
 
-@media (min-width: 768px) {
-  #about > div:nth-child(1) {
-    flex: 0 0 auto;
-    width: 66.66666667%;
-  }
-  
-  #about > div:nth-child(2) {
-    flex: 0 0 auto;
-    width: 33.33333333%;
+@media screen and (min-width: 1200px) {
+  #about > .about-column-left {
+    justify-content: space-between;
   }
 }
 
@@ -1153,29 +1145,17 @@ p {
   .theme-default #about { margin-bottom: -15rem }
 }
 
-.theme-space #about {
-  display: flex;
-  justify-content: center;
-}
-
-@media screen and (min-width: 1200px) {
-  .theme-space #about .row {
-    width: 90%
-  }
-}
-
 .theme-default .about-image {
   display: none;
 }
 
 .theme-space .about-image {
-  display: flex;
-  width: 100%
+  width: 45vw
 }
 
 @media screen and (min-width: 1500px) {
   .theme-space .about-image {
-    width: 75%
+    width: 35vw
   }
 }
 
@@ -2823,9 +2803,9 @@ ul.skills li div:first-child {
 
 @keyframes themesparkles {
   0% { opacity: 0; left: 0px; top: 0px; transform: rotate(0); font-size: calc(var(--s) - 1rem) }
-  60% { opacity: 0; left: 0px; top: 0px; transform: rotate(0); font-size: calc(var(--s) - 1rem) }
-  85% { opacity: 1; left: var(--l); top: var(--t); transform: rotate(360deg); font-size: var(--s) }
-  100% { opacity: 0; left: var(--l); top: var(--t); transform: rotate(360deg); font-size: calc(var(--s) - 1rem) }
+  55% { opacity: 0; left: 0px; top: 0px; transform: rotate(0); font-size: calc(var(--s) - 1rem) }
+  85% { opacity: 1; left: var(--l); top: var(--t); transform: rotate(-360deg); font-size: var(--s) }
+  100% { opacity: 0; left: var(--l); top: var(--t); transform: rotate(-385deg); font-size: calc(var(--s) - 1rem) }
 }
 
 @keyframes animateGlow {
