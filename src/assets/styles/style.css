@@ -840,8 +840,7 @@ p {
   }
 }
 
-.theme-vaporwave #about > div:nth-child(1),
-.theme-vaporwave #about > div:nth-child(2) {
+.theme-vaporwave #about > div {
   width: 100%
 }
 
@@ -850,25 +849,25 @@ p {
   justify-content: center;
 }
 
-.theme-vaporwave #about > div:nth-child(2) .card {
+.theme-vaporwave #about .skills-card .card {
   position: relative;
-  margin-top: 100px;
+  margin-top: 130px;
   width: 50%
 }
 
 @media (max-width: 575.98px) { 
-  .theme-vaporwave #about > div:nth-child(2) .card {
+  .theme-vaporwave #about .skills-card .card {
     width: 100%
   }
 
-  .theme-vaporwave #about > div:nth-child(2) .card::before,
-  .theme-vaporwave #about > div:nth-child(2) .card::after {
+  .theme-vaporwave #about .skills-card .card::before,
+  .theme-vaporwave #about .skills-card .card::after {
     display: none;
   }
 }
 
-.theme-vaporwave #about > div:nth-child(2) .card::before,
-.theme-vaporwave #about > div:nth-child(2) .card::after {
+.theme-vaporwave #about .skills-card .card::before,
+.theme-vaporwave #about .skills-card .card::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -878,17 +877,17 @@ p {
   background-repeat: no-repeat;
 }
 
-.theme-vaporwave #about > div:nth-child(2) .card::before {
+.theme-vaporwave #about .skills-card .card::before {
   left: -13.5rem;
 }
 
-.theme-vaporwave #about > div:nth-child(2) .card::after {
+.theme-vaporwave #about .skills-card .card::after {
   right: -13.5rem;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
-.theme-vaporwave #about > div:nth-child(2) .card-body::before {
+.theme-vaporwave #about .skills-card .card-body::before {
   content: "";
   position: absolute;
   top: 0;
@@ -925,7 +924,6 @@ p {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-  
 }
 
 .theme-vaporwave .about-desc p::after,
@@ -1145,7 +1143,8 @@ p {
   .theme-default #about { margin-bottom: -15rem }
 }
 
-.theme-default .about-image {
+.theme-default .about-image,
+.theme-vaporwave .about-image {
   display: none;
 }
 
@@ -1160,6 +1159,16 @@ p {
 }
 
 .theme-default #about .card:first-child { margin-bottom: 2rem }
+
+ul.socials h6 {
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 1.4rem
+}
+
+ul.socials li {
+  line-height: 1.2
+}
 
 .theme-default ul.socials {
   border-radius: 2px;
@@ -1181,7 +1190,8 @@ p {
   border-color: #111;
 }
 
-ul.socials li:hover {
+.theme-default .socials li:hover,
+.theme-space .socials li:hover {
   filter: brightness(1.5);
   transition: var(--t1); }
 
@@ -1212,6 +1222,11 @@ ul.socials li:nth-child(2n) a:visited {
 ul.socials li:nth-child(3n) a:link,
 ul.socials li:nth-child(3n) a:visited {
   color: #dfb8ff;
+}
+
+.theme-vaporwave ul.socials li .feather-linkedin {
+  color: #000;
+  fill: #000
 }
 
 
@@ -1272,6 +1287,10 @@ ul.socials li:nth-child(3n) a:visited {
   .theme-default #contact { margin-top: -6rem; }
 }
 
+.theme-vaporwave #contact > div {
+  min-height: 300px;
+}
+
 .theme-vaporwave #contact .card {
   position: relative;
   background-color: #D3A9FF;
@@ -1302,12 +1321,15 @@ ul.socials li:nth-child(3n) a:visited {
 }
 
 .theme-vaporwave #contact .card-body {
-  padding: 0
+  padding: 1rem
 }
 
 .window-header {
   display: flex;
   justify-content: flex-end;
+  align-content: flex-start;
+  position: absolute;
+  top: 0;
   width: 100%;
   background-color: #695EE7
 }

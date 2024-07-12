@@ -36,7 +36,7 @@ const Contact = ({ theme }) => {
       setTitle("MAKE CONTACT");
       setImg(alienHand);
     } else if (theme === "vaporwave") {
-      setTitle("");
+      setTitle("Reach out!");
       setImg(null);
     } else {
       setTitle("Give me a Shout!")
