@@ -17,11 +17,15 @@ const App = () => {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    setTimeout(() => setLoading(false), 1200);
   }, [loading]);
 
 	if (loading) {
-    return <Loading />;
+    return (
+		<div className={"theme-" + theme}>
+			<Loading />
+		</div>
+		);
   }
 
 	return (

@@ -2968,7 +2968,16 @@ ul.skills li div:first-child {
   background-color: #191919
 }
 
-.loader {
+.theme-default .loader {
+  width: 100px;
+  height: 40px;
+  --g: radial-gradient(farthest-side,#0000 calc(95% - 3px),#fff calc(100% - 3px) 98%,#0000 101%) no-repeat;
+  background: var(--g), var(--g), var(--g);
+  background-size: 30px 30px;
+  animation: l9 1s infinite alternate;
+}
+
+.theme-vaporwave .loader {
   width: 120px;
   height: 120px;
   aspect-ratio: 1;
@@ -2977,19 +2986,19 @@ ul.skills li div:first-child {
   background:
    linear-gradient(#f03355 0 0) bottom/100% 0% no-repeat
    #ddd;
-  animation: l8 2s infinite steps(7);
+  animation: l8 1s infinite steps(7);
 }
 
-.loading {
+.theme-vaporwave .loading {
   width: fit-content;
   font-weight: bold;
   font-family: monospace;
   font-size: 30px;
   color: #f03355;
   clip-path: inset(0 100% 0 0);
-  animation: l5 2s steps(8) infinite;
+  animation: l5 1s infinite steps(8);
 }
-.loading:before {
+.theme-vaporwave .loading:before {
   content:"Loading"
 }
 
@@ -2998,3 +3007,74 @@ ul.skills li div:first-child {
 }
 
 @keyframes l5 {to{clip-path: inset(0 -1ch 0 0)}}
+
+
+.theme-space .loader {
+  width: fit-content;
+  font-size: 3rem;
+  font-family: monospace;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #7E0FFF;
+  background: 
+    linear-gradient(#7E0FFF 0 0) left ,
+    linear-gradient(#7E0FFF 0 0) right;
+  background-repeat: no-repeat; 
+  border-right: 5px solid #0000;
+  border-left: 5px solid #0000;
+  background-origin: border-box;
+  position: relative;
+  animation: l9-0 2s infinite;
+}
+.theme-space .loader::before {
+  content:"Loading";
+}
+.theme-space .loader::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 22px;
+  height: 60px;
+  background: 
+   linear-gradient(90deg,#7E0FFF 4px,#0000 0 calc(100% - 4px),#7E0FFF 0) bottom            /22px 20px,
+   linear-gradient(90deg,#e94aa1  4px,#0000 0 calc(100% - 4px),#e94aa1  0) bottom 10px left 0/22px 6px,
+   linear-gradient(#7E0FFF 0 0) bottom 3px left 0  /22px 8px,
+   linear-gradient(#7E0FFF 0 0) bottom 0   left 50%/8px  16px;
+ background-repeat: no-repeat;
+ animation: l9-1 2s infinite;
+}
+
+@keyframes l9 {
+  0% {
+    background-position: 0 50%, 50% 50%, 100% 50%;
+  }
+  20% {
+    background-position: 0 0, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0 100%, 50% 0, 100% 50%;
+  }
+  60% {
+    background-position: 0 50%, 50% 100%, 100% 0;
+  }
+  80% {
+    background-position: 0 50%, 50% 50%, 100% 100%;
+  }
+  100% {
+    background-position: 0 50%, 50% 50%, 100% 50%;
+  }
+}
+
+@keyframes l9-0{
+  0%,25%    {background-size: 50% 100%}
+  25.1%,75% {background-size: 0 0,50% 100%}
+  75.1%,100%{background-size: 0 0,0 0}
+}
+@keyframes l9-1{
+  25%   { background-position:bottom, bottom 54px left 0,bottom 3px left 0,bottom 0 left 50%;left:0}
+  25.1% { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:0}
+  50%   { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+  75%   { background-position:bottom, bottom 54px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+  75.1% { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+}
