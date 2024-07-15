@@ -16,7 +16,6 @@ const App = () => {
 	const [theme, setTheme] = useState("default")
 	const [loading, setLoading] = useState(false);
 
-
 	useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, [loading]);

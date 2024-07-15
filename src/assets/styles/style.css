@@ -105,11 +105,8 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
-#root > div {
+#root > div[class^="theme"] {
   background-color: var(--bg-primary);
-  /* height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll; */
 }
 
 #root > div.theme-vaporwave {
@@ -2962,73 +2959,42 @@ ul.skills li div:first-child {
   }
 }
 
-
-
-#loader-container {
-  max-width: 220px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #191919
 }
 
-#loader path:nth-child(2) {
-  stroke-dasharray: 200%;
-  stroke-dashoffset: 200%;
-  animation: strokeAnimate 2s 0s ease forwards;
+.loader {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  -webkit-mask:linear-gradient(0deg,#000 55%,#0000 0) bottom/100% 18.18%;
+  background:
+   linear-gradient(#f03355 0 0) bottom/100% 0% no-repeat
+   #ddd;
+  animation: l8 2s infinite steps(7);
 }
 
-#loader path:nth-child(3) {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: strokeAnimate 2s 0.3s ease forwards;
+.loading {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  color: #f03355;
+  clip-path: inset(0 100% 0 0);
+  animation: l5 2s steps(8) infinite;
 }
-#loader path:nth-child(4) {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: strokeAnimate 2s 0.9s ease forwards;
-}
-#loader path:nth-child(5) {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: strokeAnimate 2s 1.2s ease forwards;
-}
-#loader path:nth-child(6) {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: strokeAnimate 2s 1.5s ease forwards;
-}
-#loader path:nth-child(7) {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: strokeAnimate 2s 1.8s ease forwards;
-}
-#loader path:nth-child(8) {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: strokeAnimate 2s 2.1s ease forwards;
+.loading:before {
+  content:"Loading"
 }
 
-@keyframes strokeAnimate {
-  to {
-    stroke-dashoffset: 0;
-  }
+@keyframes l8 {
+    100% {background-size:100% 115%}
 }
 
-@media screen and (max-width: 768px) {
-  #loader-container {
-    max-width: 150px;
-  }
-  #loader {
-    width: 150px;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  #loader-container {
-    max-width: 100px;
-  }
-  #loader {
-    width: 100px;
-  }
-}
+@keyframes l5 {to{clip-path: inset(0 -1ch 0 0)}}
