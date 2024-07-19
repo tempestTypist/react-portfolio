@@ -8,7 +8,6 @@ import { faLinkedin } from '@fortawesome/free-solid-svg-icons'
 import SkillBar from '../components/SkillBar/'
 import Socials from '../components/Socials/'
 
-
 const About = ({ theme }) => {
   const control = useAnimation()
 	const [ref, inView] = useInView({
