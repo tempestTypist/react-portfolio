@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, lazy } from 'react'
 import minime from '../assets/images/mini-me.png'
 import neonT from '../assets/images/default/neon-tl.svg'
 import neonB from '../assets/images/default/neon-br.svg'
@@ -99,7 +99,7 @@ const Home = ({ theme }) => {
           src={neonT} 
           alt="Neon Lights"
         />
-          <motion.div className="hero-text col-4"
+          <motion.div className="hero-text"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -108,7 +108,7 @@ const Home = ({ theme }) => {
                 ease: [0, 0.71, 0.2, 1.01]
               }}>
             <p className="lead m-0">hi there! i'm</p>
-            <h1 className="display-4 px-4">Summer Villeneuve</h1>
+            <h1 className="display-4 px-4">Summer<br/>Villeneuve</h1>
           </motion.div>
         <motion.img 
           className="neon-lights-bot" 

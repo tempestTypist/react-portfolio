@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import HeaderToggle from "../HeaderToggle";
 import HeaderNav from "../HeaderNav";
+import './style.css';
 
 const Header = () => {
 	const [isOpen, toggleOpen] = useCycle(false, true);

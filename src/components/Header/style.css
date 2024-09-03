@@ -1,0 +1,67 @@
+#header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 56px;
+  width: 100%;
+  z-index: 1030;
+  transition: visibility 0.2s, opacity 0.2s ease;
+}
+
+.header-nav.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header-nav.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/****** redo later, no longer works/needed, should be matched to theme *******/
+
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active {
+	color: #fff !important;
+  font-family: var(--title-font-primary);
+  font-size: 1.4rem
+}
+
+@media (max-width: 767.98px) {
+  .offcanvas-collapse {
+    position: fixed;
+    top: 56px; 
+    bottom: 0;
+    left: 100%;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #000;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+  }
+  .offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0;
+}
+
+.nav-underline .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+  color: #6c757d;
+}
+
+.nav-underline .nav-link:hover {
+  color: #007bff;
+}
+
+.nav-underline .active {
+  font-weight: 500;
+  color: #343a40;
+}
