@@ -1,8 +1,8 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import { Row } from 'react-bootstrap';
-import dividerTop from '../assets/images/default/page-divider-1.svg'
-import dividerBot from '../assets/images/default/page-divider-2.svg'
+import dividerTop from '../assets/default-theme/images/page-divider-1.svg'
+import dividerBot from '../assets/default-theme/images/page-divider-2.svg'
 
 export default function Work() {
   const slideData = [
@@ -31,12 +31,12 @@ export default function Work() {
 
   return (
     <Row as={"section"} id="work" className="mt-4">
-      <img src={dividerTop} className="work-divider-top" />
+      <img src={dividerTop} className="work-divider-top" alt="" />
       <div>
         <h1 className="pb-3">My Work</h1>
         <Slider heading="Example Slider" slides={slideData} />
       </div>
-      <img src={dividerBot} className="work-divider-bot" />
+      <img src={dividerBot} className="work-divider-bot" alt="" />
     </Row>
   );
 }

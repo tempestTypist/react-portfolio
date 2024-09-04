@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import pfp from '../assets/images/new-pfp.png'
+import React, { useEffect } from 'react'
+import pfp from '../assets/space-theme/images/new-pfp.png'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Container, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin } from '@fortawesome/free-solid-svg-icons'
+// import { Container, Row, Col } from 'react-bootstrap';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faLinkedin } from '@fortawesome/free-solid-svg-icons'
 import SkillBar from '../components/SkillBar/'
 import Socials from '../components/Socials/'
 
@@ -116,6 +116,7 @@ const About = () => {
           >
           {/* about me image */}
           <motion.img 
+            loading="lazy"
             src={pfp} 
             alt="Summer's Profile Picture" 
             className="about-image" 

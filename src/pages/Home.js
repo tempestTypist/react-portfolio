@@ -1,9 +1,9 @@
-import React, { useState, lazy } from 'react'
-import minime from '../assets/images/mini-me.png'
-import neonT from '../assets/images/default/neon-tl.svg'
-import neonB from '../assets/images/default/neon-br.svg'
+import React, { useState } from 'react'
+import minime from '../assets/space-theme/images/mini-me.png'
+import neonT from '../assets/default-theme/images/neon-tl.svg'
+import neonB from '../assets/default-theme/images/neon-br.svg'
 import { motion } from "framer-motion";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { AnimatedTitle } from "../components/AnimatedTitle/index.js";
 
 const Home = ({ theme }) => {
@@ -44,6 +44,7 @@ const Home = ({ theme }) => {
                 duration: 1.8,
                 delay: 0.5
               }}
+              loading="lazy"
               src={minime} 
               alt="Mini-me"/>
           </div>
@@ -96,6 +97,7 @@ const Home = ({ theme }) => {
             duration: 1,
             delay: 0.3
           }}
+          loading="lazy"
           src={neonT} 
           alt="Neon Lights"
         />
@@ -119,6 +121,7 @@ const Home = ({ theme }) => {
             duration: 1,
             delay: 0.3
           }}
+          loading="lazy"
           src={neonB} 
           alt="Neon Lights"
         />
