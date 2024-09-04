@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWandMagic, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
 import './style.css'
 
-const ThemeChanger = ({ setTheme }) => {
+const ThemeChanger = ({ setTheme, setLoading }) => {
 	const [toggle, setToggle] = useState(false)
 
 	const changeTheme = (theme) => {
 		setTheme(theme);
+		setLoading(true);
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	}

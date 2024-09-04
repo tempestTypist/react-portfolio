@@ -150,6 +150,17 @@
     width: 35vw
   }
 }
+/* if theme is space, show socials card in about column right
+ if theme is not space, show the socials list in the about desc in column left*/
+.theme-space .about-column-right .socials-card {
+  display: block;
+  visibility: visible;
+}
+
+.theme-space .about-column-left .socials {
+  display: none;
+  visibility: hidden;
+}
 
 .theme-space  ul.socials,
 .theme-space  ul.socials li {

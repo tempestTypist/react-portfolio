@@ -4,7 +4,7 @@ import { Row } from 'react-bootstrap';
 import dividerTop from '../assets/images/default/page-divider-1.svg'
 import dividerBot from '../assets/images/default/page-divider-2.svg'
 
-export default function Work({ theme }) {
+export default function Work() {
   const slideData = [
     {
       index: 0,
@@ -31,12 +31,12 @@ export default function Work({ theme }) {
 
   return (
     <Row as={"section"} id="work" className="mt-4">
-      {theme === "default" ? <img src={dividerTop} className="work-divider-top" /> : null}
+      <img src={dividerTop} className="work-divider-top" />
       <div>
         <h1 className="pb-3">My Work</h1>
         <Slider heading="Example Slider" slides={slideData} />
       </div>
-      {theme === "default" ? <img src={dividerBot} className="work-divider-bot" /> : null}
+      <img src={dividerBot} className="work-divider-bot" />
     </Row>
   );
 }

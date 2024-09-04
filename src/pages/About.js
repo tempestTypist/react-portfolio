@@ -8,7 +8,7 @@ import { faLinkedin } from '@fortawesome/free-solid-svg-icons'
 import SkillBar from '../components/SkillBar/'
 import Socials from '../components/Socials/'
 
-const About = ({ theme }) => {
+const About = () => {
   const control = useAnimation()
 	const [ref, inView] = useInView({
     triggerOnce: true,
@@ -105,58 +105,6 @@ const About = ({ theme }) => {
     } ;
   }, [control, inView]);
 
-  // if (theme === "space") {
-  //   return (
-  //     <motion.section 
-  //       ref={ref}
-  //       id="about" 
-  //       className="row p-4">
-
-  //         <motion.div 
-  //           className="col-12 col-md-6 d-flex flex-column justify-content-between align-items-center"
-  //           variants={sectionVariant}
-  //           initial="hidden"
-  //           animate={control}>
-  //           <motion.img src={pfp} alt="Summer's Profile Picture" className="about-image" variants={itemVariant} />
-  //           <motion.div className="" variants={itemVariant}>
-  //             <div className="card p-4">
-  //               <h1 className="fw-bold mb-0">I am a Web Developer.</h1>
-  //               <h4 className="mb-4">(And Illustrator!)</h4>
-  //               <p>I am on a mission to eradicate uninspired web design! Introducing a fresh and vibrant perspective to web development, I am passionate about breathing life into digital spaces with exciting, diverse, and captivating designs. Through this endeavor, I aim to contribute to a digital landscape that not only reflects the ever-evolving nature of technology but also resonates with the hearts and minds of those who interact with it.</p>
-  //             </div>
-  //           </motion.div>
-
-  //         </motion.div>	
-  //         <motion.div 
-  //           className="col-12 col-md-6 d-flex flex-column justify-content-end"
-  //           variants={sectionVariant}
-  //           initial="hidden"
-  //           animate={control}>
-  //           <motion.div className="my-4" variants={itemVariant}>
-  //             <div className="card">
-  //               <ul className="socials list-group list-group-flush">
-  //                 {socials.map((social) => 
-  //                   <Socials label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
-  //               </ul>
-  //             </div>
-  //           </motion.div>
-  //           <motion.div variants={itemVariant}>
-  //             <div className="card">
-  //               <div className="card-body">
-  //                 <h4 className="d-flex align-items-center mb-3">Skills</h4>
-  //                 <ul className="skills">
-  //                   {skills.map((skill) =>
-  //                     <SkillBar key={"skill-" + skill.name} name={skill.name} percent={skill.percent} theme={theme} />) }
-  //                 </ul>
-  //               </div>
-  //             </div>
-  //           </motion.div>
-  //         </motion.div>	
-  //     </motion.section>
-  //   )
-  // }
-
-
   return (
     <section ref={ref} id="about" className="row justify-content-center mx-lg-5"> 
 
@@ -183,11 +131,10 @@ const About = ({ theme }) => {
                 <p>I am on a mission to eradicate uninspired web design! Introducing a fresh and vibrant perspective to web development, I am passionate about breathing life into digital spaces with exciting, diverse, and captivating designs. Through this endeavor, I aim to contribute to a digital landscape that not only reflects the ever-evolving nature of technology but also resonates with the hearts and minds of those who interact with it.
                 
                 {/* socials */}
-                {theme !== "space" && 
                   <ul className="socials list-group list-group-flush mt-4">
                     {socials.map((social) => 
                       <Socials label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
-                  </ul>}
+                  </ul>
                 </p>
               </div>
             </div>
@@ -202,7 +149,6 @@ const About = ({ theme }) => {
           animate={control}
           >
           {/* socials */}
-          {theme === "space" && 
           <motion.div className="socials-card my-4" variants={aboutItem}>
               <div className="card">
                 <ul className="socials list-group list-group-flush">
@@ -210,7 +156,7 @@ const About = ({ theme }) => {
                       <Socials label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
                 </ul>
               </div>
-          </motion.div>}
+          </motion.div>
 
           {/* skills */}
           <motion.div className="skills-card" variants={aboutItem}>

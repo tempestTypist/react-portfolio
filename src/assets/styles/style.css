@@ -144,6 +144,16 @@ p {
   }
 }
 
+.about-column-left .socials {
+  display: flex;
+  visibility: visible;
+}
+
+.about-column-right .socials-card {
+  display: none;
+  visibility: hidden;
+}
+
 #about h1 {
   font-family: var(--title-font-primary);
   font-size: 4rem;
@@ -212,6 +222,12 @@ ul.socials li:nth-child(3n) a:visited {
   font-family: var(--title-font-secondary);
   font-size: 4.4rem;
   text-align: center;
+}
+
+.work-divider-top,
+.work-divider-bot {
+  display: none;
+  visibility: hidden;
 }
 
 /***************************/

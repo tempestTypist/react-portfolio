@@ -243,6 +243,10 @@
   width: 100%
 }
 
+.theme-vaporwave .socials-card {
+  display: none !important;
+}
+
 .theme-vaporwave #about > div:nth-child(2) > div {
   display: flex;
   justify-content: center;

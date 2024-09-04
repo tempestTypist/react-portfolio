@@ -15,35 +15,41 @@ const Contact = lazy(() => import('./pages/Contact'));
 
 const App = () => {
 	const [theme, setTheme] = useState("default")
+	const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     import(`./assets/styles/${theme}-theme.css`);
-  }, [theme]);
+		// setTimeout(() => setLoading(true), 1200);
+		setTimeout(() => {
+			setLoading(false);
+		}, 1200);
+  }, [theme, isLoading]);
 
 	// useEffect(() => {
   //   setTimeout(() => setLoading(false), 1200);
   // }, [loading]);
 
-	// if (loading) {
-  //   return (
-	// 	<div className={"theme-" + theme}>
-	// 		<Loading />
-	// 	</div>
-	// 	);
-  // }
+	if (isLoading) {
+    return (
+		<div className={"theme-" + theme}>
+			<Loading />
+		</div>
+		);
+  }
 
 	return (
 		<>
 			<Suspense fallback={<Loading />}>
 				<div className={"theme-" + theme}>
+					{/* {loading && <Loading />} */}
 					<Header />
 						<Container fluid>
 							<Home theme={theme} />
-							<About theme={theme} />
-							<Work theme={theme} />
+							<About />
+							<Work />
 							<Contact theme={theme} />
 						</Container>
-						<ThemeChanger setTheme={setTheme} />
+						<ThemeChanger setTheme={setTheme} setLoading={setLoading} />
 					<Footer />
 				</div>
 			</Suspense>

@@ -161,9 +161,13 @@
 }
 
 .theme-default .work-divider-top {
+  display: block;
+  visibility: visible;
 	margin-bottom: -5px;
 	padding: 0 }
 .theme-default .work-divider-bot {
+  display: block;
+  visibility: visible;
 	margin-top: -5px;
 	padding: 0 }
 
