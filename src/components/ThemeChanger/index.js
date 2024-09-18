@@ -1,17 +1,61 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWandMagic, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
 import './style.css'
 
-const ThemeChanger = ({ setTheme, setLoading }) => {
+const ThemeChanger = ({ theme, setTheme, setLoading }) => {
 	const [toggle, setToggle] = useState(false)
 
-	const changeTheme = (theme) => {
-		setTheme(theme);
-		setLoading(true);
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
+  const loadCSS = (theme) => {
+    return new Promise((resolve, reject) => {
+      const existingLink = document.querySelector(`link[data-theme="${theme}"]`);
+			console.log(existingLink)
+
+      if (existingLink) {
+        resolve();
+				console.log("theme already loaded")
+        return;
+      }
+
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = `./assets/${theme}-theme/styles/${theme}-theme.css`;
+      link.dataset.theme = theme;
+
+      link.onload = () => resolve();
+      link.onerror = (e) => reject(e);
+
+      document.head.appendChild(link);
+			console.log("loadCSS; link created: " + theme)
+    });
+  };
+
+  const unloadCSS = (theme) => {
+    const link = document.querySelector(`link[data-theme="${theme}"]`);
+		console.log("unloadCSS: current style sheet:")
+		console.log(link)
+    if (link) {
+      document.head.removeChild(link);
+			console.log("unloadCSS; Previous theme removed.")
+    }
+  };
+
+  const changeTheme = async (newTheme) => {
+    setLoading(true);
+    try {
+			console.log("changeTheme; currentTheme to be unloaded: " + theme)
+      unloadCSS(theme);
+			console.log("changeTheme; newTheme: " + newTheme)
+      await loadCSS(newTheme);
+      setTheme(newTheme);
+    } catch (error) {
+      console.error('changeTheme; Error loading theme assets:', error);
+    } finally {
+			return new Promise((resolve) => {
+				setTimeout(() => resolve(setLoading(false)), 1000);
+			});
+    }
+  };
 
 	return (
 		<div className="theme-changer" onClick={() => setToggle(!toggle)} >

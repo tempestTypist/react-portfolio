@@ -205,7 +205,10 @@ ul.socials li:nth-child(3n) a:visited {
   color: #dfb8ff;
 }
 
-
+ul.socials li .feather-linkedin {
+  color: #dfb8ff;
+  fill: #dfb8ff
+}
 
 /***************************/
 /****** work section ******/

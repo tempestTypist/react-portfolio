@@ -129,14 +129,13 @@ const About = () => {
               <div className="card-body">
                 <h1 className="fw-bold mb-0">I am a <span>Web Developer</span></h1>
                 <h4 className="mb-4">(And Illustrator!)</h4>
-                <p>I am on a mission to eradicate uninspired web design! Introducing a fresh and vibrant perspective to web development, I am passionate about breathing life into digital spaces with exciting, diverse, and captivating designs. Through this endeavor, I aim to contribute to a digital landscape that not only reflects the ever-evolving nature of technology but also resonates with the hearts and minds of those who interact with it.
+                <p>I am on a mission to eradicate uninspired web design! Introducing a fresh and vibrant perspective to web development, I am passionate about breathing life into digital spaces with exciting, diverse, and captivating designs. Through this endeavor, I aim to contribute to a digital landscape that not only reflects the ever-evolving nature of technology but also resonates with the hearts and minds of those who interact with it.</p>
                 
                 {/* socials */}
-                  <ul className="socials list-group list-group-flush mt-4">
-                    {socials.map((social) => 
-                      <Socials label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
-                  </ul>
-                </p>
+                <ul className="socials list-group list-group-flush">
+                  {socials.map((social, i) => 
+                    <Socials key={i} label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
+                </ul>
               </div>
             </div>
           </motion.div>
@@ -151,12 +150,12 @@ const About = () => {
           >
           {/* socials */}
           <motion.div className="socials-card my-4" variants={aboutItem}>
-              <div className="card">
-                <ul className="socials list-group list-group-flush">
-                  {socials.map((social) => 
-                      <Socials label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
-                </ul>
-              </div>
+            <div className="card">
+              <ul className="socials list-group list-group-flush">
+                {socials.map((social, i) => 
+                    <Socials key={i} label={social.label} title={social.title} icon={social.icon} link={social.link} />)}
+              </ul>
+            </div>
           </motion.div>
 
           {/* skills */}

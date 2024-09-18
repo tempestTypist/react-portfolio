@@ -45,7 +45,7 @@ const App = () => {
 							<Work />
 							<Contact theme={theme} />
 						</Container>
-						<ThemeChanger setTheme={setTheme} setLoading={setLoading} />
+						<ThemeChanger theme={theme} setTheme={setTheme} setLoading={setLoading} />
 					<Footer />
 				</div>
 			</Suspense>
