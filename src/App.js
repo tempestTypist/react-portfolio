@@ -20,10 +20,8 @@ const App = () => {
 
   useEffect(() => {
     import(`./assets/${theme}-theme/styles/${theme}-theme.css`);
-		setTimeout(() => {
-			setLoading(false);
-		}, 1200);
-  }, [theme, isLoading]);
+		setTimeout(() => setLoading(false), 900);
+  }, [theme]);
 
 	if (isLoading) {
     return (
@@ -37,7 +35,6 @@ const App = () => {
 		<>
 			<Suspense fallback={<Loading />}>
 				<div className={"theme-" + theme}>
-					{/* {loading && <Loading />} */}
 					<Header />
 						<Container fluid>
 							<Home theme={theme} />
