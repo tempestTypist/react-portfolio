@@ -150,11 +150,11 @@
   background: rgb(28,28,28);
   background: linear-gradient(0deg, rgba(28,28,28,1) 50%, rgba(31,31,31,1) 50%);
   border-color: #111;
+  transition: var(--t1); 
 }
 
 .theme-default .socials li:hover {
   filter: brightness(1.5);
-  transition: var(--t1); 
 }
 
 .theme-default #work > div {
@@ -471,10 +471,10 @@ border-bottom-width: 2px;
   position: relative;
   text-transform: uppercase;
   font-size: 15px;
-  color: #eee; }
+  color: #eee;
+  transition: var(--t1); }
     .theme-default ul.skills li:hover {
-      filter: brightness(1.5);
-      transition: var(--t1); }
+      filter: brightness(1.5) }
 
 .theme-default ul.skills li:before {
   content: "";
@@ -533,6 +533,11 @@ border-bottom-width: 2px;
           background: #53FF4B; }
         .theme-default ul.skills li:nth-child(6n):hover::after {
           background: #00CFFF; }
+
+.theme-default .percent-label {
+  display: none;
+  visibility: hidden;
+}
 
 .theme-default .progress-bar {
   content: "";
