@@ -408,8 +408,12 @@ border-bottom-width: 2px;
   font-weight: 600;
   font-size: 1.1rem;
   color: #57565c;
-  position: relative;
-  left: 0;
+  position: absolute;
+}
+
+.theme-default textarea::placeholder {
+  left: calc(1.5rem+1.3rem);
+  top: .75rem
 }
 
 .theme-default input,
@@ -417,6 +421,10 @@ border-bottom-width: 2px;
   font-family: "Quicksand", sans-serif;
   color: #fff;
   font-size: 1.1rem;
+}
+
+.theme-default textarea.form-control {
+  padding: .75rem 3.5rem;
 }
 
 .theme-default .label {

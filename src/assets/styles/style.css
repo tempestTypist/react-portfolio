@@ -281,12 +281,9 @@ ul.socials li .feather-linkedin {
   transform: scaleX(-1);
 }
 
-.card input[type=textarea] {
+/* .card input[type=textarea] {
   height: auto;
-}
-
-.card input[type=textarea]::placeholder {
-}
+} */
 
 
 /***************************/
@@ -382,7 +379,7 @@ fieldset[disabled] .btn {
   position: relative;
 }
 
-.card input,
+/* .card input,
 .card textarea {
   position: relative;
   width: 100%;
@@ -390,7 +387,7 @@ fieldset[disabled] .btn {
   border: 0;
   font-size: 1.2rem;
   font-weight: 400;
-}
+} */
 
 .card input:focus,
 .card textarea:focus
