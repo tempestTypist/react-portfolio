@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     import(`./assets/${theme}-theme/styles/${theme}-theme.css`);
 		setTimeout(() => setLoading(false), 900);
-  }, [theme]);
+  }, [theme, isLoading]);
 
 	if (isLoading) {
     return (

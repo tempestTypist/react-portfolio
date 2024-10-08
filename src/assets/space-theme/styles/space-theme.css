@@ -167,11 +167,11 @@
   color: var(--card-color);
   background: var(--card-bg);
   border-color: #111;
+  transition: var(--t1); 
 }
 
 .theme-space .socials li:hover {
   filter: brightness(1.5);
-  transition: var(--t1); 
 }
 
 .theme-space #contact .card {

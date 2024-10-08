@@ -695,7 +695,7 @@
 }
 
 .theme-vaporwave .slide--current .btn:hover {
-  transform: scale(1.2)
+  transform: scale(1.2);
 }
 
 .theme-vaporwave .slide--current .btn:hover::after {
