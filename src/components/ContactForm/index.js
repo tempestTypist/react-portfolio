@@ -5,9 +5,9 @@ import Swal from 'sweetalert2';
 import { Container, Row, Col } from 'react-bootstrap'
 import ContactFormInput from '../ContactFormInput'
 
-const serviceID = process.env.REACT_APP_SERVICE_ID;
-const templateID = process.env.REACT_APP_TEMPLATE_ID;
-const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+// const serviceID = process.env.REACT_APP_SERVICE_ID;
+// const templateID = process.env.REACT_APP_TEMPLATE_ID;
+// const publicKey = process.env.REACT_APP_PUBLIC_KEY;
 
 const ContactForm = ({ formInputs, btnLabel }) => {
   const form = useRef();
@@ -55,15 +55,14 @@ const ContactForm = ({ formInputs, btnLabel }) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(serviceID + " " + templateID + " " + publicKey)
     // const { name, email, message } = e.target.elements;
     // let details = {
     //   name: name.value,
     //   email: email.value,
     //   message: message.value,
     // };
-    emailjs.sendForm(serviceID, templateID, form.current, {
-      publicKey: publicKey
+    emailjs.sendForm("service_adwgep2", "template_j9jc5hc", form.current, {
+      publicKey: "kUTSNfIe7Ye4FJvjn"
     })
       .then(() => {
         Swal.fire({
