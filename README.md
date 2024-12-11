@@ -8,7 +8,7 @@
 * [Setup](#setup)
 
 ## General info
-My Portfolio, revamped and updated for React. You can view it at [https://tempest-portfolio.herokuapp.com](https://tempest-portfolio.herokuapp.com/)
+My Portfolio, revamped and updated for React. You can view it at [https://tempest-typist.com](https://tempest-typist.com/)
 	
 ## Technologies
 Project is created with:
