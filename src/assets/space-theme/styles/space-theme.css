@@ -221,32 +221,191 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .theme-space .input-container {
-  margin: 0 60px 50px;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.theme-space .ic1 {
+  margin-top: 40px;
 }
 
 .theme-space .form-control {
+  background: #46494e;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  /* transition: background .5s ease */
+}
+
+/* .theme-space .form-control:focus,
+.theme-space .form-control:not(:placeholder-shown) {
+  background: rgb(70,73,78);
+  background: linear-gradient(90deg, 
+    rgba(70,73,78,1) 0%, 
+    rgba(70,73,78,1) 13%, 
+    rgba(108,68,196,1) 13%, 
+    rgba(108,68,196,1) 31%, 
+    rgba(72,73,84,1) 31%, 
+    rgba(70,73,78,1) 100%);   
+} */
+
+.theme-space .cut {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+}
+
+.theme-space .input#name ~ .cut {
+  width: 70px;
+}
+
+.theme-space .input#email ~ .cut {
+  width: 76px;
+}
+
+.theme-space .input#message ~ .cut {
+  width: 90px;
+}
+
+.theme-space .form-control:focus ~ .cut,
+.theme-space .form-control:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+  background-color: #15172b;
+  /* transition: background-color .5s ease */
+}
+
+.theme-space .cut::after {
+  content: "";
+  background-color: transparent
+}
+
+.theme-space .form-control:focus ~ .cut::after,
+.theme-space .form-control:not(:placeholder-shown) ~ .cut::after {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 1rem;
+  width: 2rem;
+  background-color: #50db39;
+  border-radius: 10rem 10rem 0 0;
+  /* transition: background-color .5s ease */
+}
+
+.theme-space .input-label label {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 16px;
+}
+
+.theme-space .form-control:focus ~ .input-label label,
+.theme-space .form-control:not(:placeholder-shown) ~ .input-label label {
+  transform: translateY(-26px) translateX(10px) scale(0.75);
+}
+
+/* .theme-space .form-control:focus ~ .input-label {
+  color: #dc2f55;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .theme-space .input-container {
+  margin: 0 60px 50px;
+} */
+
+/* .theme-space .form-control {
   background: none;
   color: #fff;
   border: none;
   box-shadow: none;
-}
+} */
 
 .theme-space .contact-form .form-control::placeholder {
   color: transparent;
 }
 
-.theme-space .form-control:focus ~ label,
-.theme-space .form-control:valid ~ label,
-.theme-space .form-control:not(:placeholder-shown) ~ label {
+.theme-space .form-control:focus ~ div label,
+.theme-space .form-control:not(:placeholder-shown) ~ div label {
   color: #ddd;
-  transform: translate(-12%, -50%) scale(0.75);
+  /* transform: translate(-12%, -50%) scale(0.75); */
 }
 
-.theme-space .form-control:focus ~ .bar:before, 
-.theme-space .form-control:focus ~ .bar:after,
-.theme-space .form-control:valid ~ .bar:before, 
-.theme-space .form-control:valid ~ .bar:after {
+/* .theme-space .form-control:focus ~ .bar:before, 
+.theme-space .form-control:focus ~ .bar:after {
   width: 50%;
 }
 
@@ -283,12 +442,12 @@
 .theme-space .form-control:focus:not(:placeholder-shown):invalid ~ .bar:before, 
 .theme-space .form-control:focus:not(:placeholder-shown):invalid ~ .bar:after {
   background: #6f42c1
-}
+} */
 
 /* placeholder shown = input is empty
    not:placeholder shown = input is full 
    "if input is full, input is being focused, and input is invalid, show purple bar*/
-.theme-space .form-control:invalid + .bar:before,
+/* .theme-space .form-control:invalid + .bar:before,
 .theme-space .form-control:invalid + .bar:after,
 .theme-space .form-control:not(:placeholder-shown):invalid ~ .bar:before, 
 .theme-space .form-control:not(:placeholder-shown):invalid ~ .bar:after {
@@ -303,6 +462,12 @@
 
 .theme-space .input-container .bar:after {
   right: 50%;
+} */
+
+.theme-space .input-container .form-input-error {
+  position: absolute;
+  top: -1.4rem;
+  right: 0;
 }
 
 .theme-space .progress-title {

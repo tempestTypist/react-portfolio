@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SkillBar = ({ name, percent }) => {
 
   return (

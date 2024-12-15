@@ -1,6 +1,3 @@
-// Origin and blogpost!
-// https://webanimation.blog/blog/wavy-text-animation-using-react-hooks-with-framer-motion/
-import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { letterContainerVariants, letterVariants } from "./AnimationVariants";
 

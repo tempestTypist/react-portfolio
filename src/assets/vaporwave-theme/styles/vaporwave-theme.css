@@ -612,8 +612,19 @@
   background-clip: padding-box, border-box;
 }
 
+.theme-vaporwave .input-container {
+  margin-top: 2.2rem
+}
+
+.theme-vaporwave .input-container div {
+  position: absolute;
+  top: -2.2rem;
+  right: 0;
+}
+
 .theme-vaporwave .input-container label {
   visibility: hidden;
+  display: none
 }
 
 .theme-vaporwave .slide .card {

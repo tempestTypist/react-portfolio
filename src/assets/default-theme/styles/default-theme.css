@@ -431,18 +431,27 @@ border-bottom-width: 2px;
   display: none;
 }
 
+.theme-default .input-container {
+  margin-top: 2.2rem
+}
+
+.theme-default .input-container div {
+  position: absolute;
+  top: -2.2rem;
+}
+
 .theme-default .input-container .icon {
   color: #57565c;
   height: 1.3rem;
   position: absolute;
   left: 1.5rem;
-  top: 1rem;
+  top: 3.1rem;
   z-index: 10;
   transition: var(--t1)
 }
 
-.theme-default .form-control:focus + label .icon,
-.theme-default .form-control:valid + label .icon {
+.theme-default .input-container .form-control:focus + label .icon,
+.theme-default .input-container input:not(:blank) + label .icon {
   color: #6f42c1;
 }
 
@@ -574,7 +583,6 @@ border-bottom-width: 2px;
   background-image: url('../images/equalizer-green.gif'); }
 .theme-default .skills li:nth-child(6n) .progress {
   background-image: url('../images/equalizer-cyan.gif'); }
-
 
 .theme-default footer {
 	color: #fff;

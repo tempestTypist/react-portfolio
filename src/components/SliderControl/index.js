@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SliderControl = ({ type, title, handleClick }) => {
   return (
     <button className={`slider-btn slider-btn--${type}`} title={title} onClick={handleClick}>

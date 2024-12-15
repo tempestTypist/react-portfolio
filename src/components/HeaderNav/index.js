@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { NavHashLink as NavLink } from "react-router-hash-link";
 import '../Header/style.css';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import alien from "../assets/space-theme/images/alien-head.png"
 import alienHand from "../assets/space-theme/images/alien-hand.png"
 import speaker from "../assets/default-theme/images/speakersL.gif"
@@ -9,27 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faEnvelope, faComment, faMinus, faX } from '@fortawesome/free-solid-svg-icons'
 import { faSquare } from '@fortawesome/free-regular-svg-icons'
 import { Row, Col } from 'react-bootstrap';
-import ContactForm from '../components/ContactForm/'
+import { ContactForm } from '../components/ContactForm/'
 
 
 const Contact = ({ theme }) => {
   const [contactTitle, setTitle] = useState("Give me a shout!")
   const [titleImg, setImg] = useState()
-
-  const formInputs = [{
-    type: "text",
-    label: "name",
-    icon: <FontAwesomeIcon className="icon me-2" icon={faUser} />
-  }, {
-    type: "email",
-    label: "email",
-    icon: <FontAwesomeIcon className="icon me-2" icon={faEnvelope} />
-  }, {
-    type: "textarea",
-    label: "message",
-    icon: <FontAwesomeIcon className="icon me-2" icon={faComment} />,
-    rows: 4
-  }]
 
   useEffect(() => {
     if (theme === "space") {
@@ -67,8 +52,7 @@ const Contact = ({ theme }) => {
               <img loading="lazy" src={titleImg} className="contact-title-img flip" alt="" />
             </div>
 
-            <ContactForm formInputs={formInputs} btnLabel={"Submit"} />
-            {/* <p>theTempestTypist@gmail.com</p> */}
+            <ContactForm />
           </div>
         </div>
       </Col>

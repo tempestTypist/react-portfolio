@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import pfp from '../assets/space-theme/images/new-pfp.png'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'

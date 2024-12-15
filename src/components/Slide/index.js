@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const Slide = (props) => {
   const { src, dsc, headline, index, href } = props.slide

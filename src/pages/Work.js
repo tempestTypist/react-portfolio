@@ -1,4 +1,3 @@
-import React from 'react'
 import Slider from '../components/Slider'
 import { Row } from 'react-bootstrap';
 import dividerTop from '../assets/default-theme/images/page-divider-1.svg'

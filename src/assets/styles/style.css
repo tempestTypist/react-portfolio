@@ -379,6 +379,10 @@ fieldset[disabled] .btn {
   position: relative;
 }
 
+.card .input-container div:first-child {
+  height: 2.2rem
+}
+
 .card input,
 .card textarea {
   position: relative;
@@ -439,6 +443,25 @@ ul.skills li div:first-child {
   }
 }
 */
+
+/***************************/
+/******* sweetalerts ********/
+/***************************/
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+  background: #000 !important;
+  color: #eee !important;
+}
+
+.form-input-error {
+  font-size: 1rem;
+  background-color: #f2bab9;
+  color: #d93534;
+  border: #d93534 1px solid;
+  border-radius: 3rem;
+  margin-top: .3rem;
+  margin-bottom: .3rem
+}
 
 /***************************/
 /******* animations ********/

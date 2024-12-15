@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import minime from '../assets/space-theme/images/mini-me.png'
 import neonT from '../assets/default-theme/images/neon-tl.svg'
 import neonB from '../assets/default-theme/images/neon-br.svg'
