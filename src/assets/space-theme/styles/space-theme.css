@@ -240,9 +240,6 @@
   height: 50px;
   position: relative;
   width: 100%;
-}
-
-.theme-space .ic1 {
   margin-top: 40px;
 }
 
@@ -255,7 +252,8 @@
   font-size: 18px;
   height: 100%;
   outline: 0;
-  padding: 4px 20px 0;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
   /* transition: background .5s ease */
 }
@@ -322,7 +320,7 @@
 }
 
 .theme-space .input-label label {
-  color: #65657b;
+  color: #7d7d7d;
   font-family: sans-serif;
   left: 20px;
   line-height: 14px;

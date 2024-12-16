@@ -23,8 +23,31 @@ export const ContactFormInput = ({
   const inputErrors = findInputError(errors, name)
   const isInvalid = isFormInvalid(inputErrors)
 
+  // let placeholder = label && label.charAt(0).toUpperCase() + label.slice(1);
+
+  // if (type === "textarea") {
+  //   return (
+  //   <div className="input-container">
+  //     <textarea 
+  //       aria-describedby={label}
+  //       placeholder={placeholder}
+  //       className="form-control"
+  //       id={label} 
+  //       name={"user_" + label}
+  //       {...other}
+  //       required
+  //     />
+  //     <label htmlFor={label}>
+  //       {icon && icon}
+  //       <span className="label">{placeholder}</span>
+  //     </label>
+  //     <div className="bar"></div>
+  //   </div>
+  //   )
+  // }
+
   return (
-    <div className="input-container ic1">
+    <div className="input-container">
       {multiline ? (
           <textarea
             type={type}
@@ -47,7 +70,7 @@ export const ContactFormInput = ({
           />
       )}
       <div className="cut"></div>
-      <div className="d-flex justify-content-between input-label">
+      <div className="input-label d-flex justify-content-between">
         <label htmlFor={label}>
           {icon && icon}
           <span className="label">{placeholder}</span>
@@ -62,6 +85,30 @@ export const ContactFormInput = ({
         </AnimatePresence>
       </div>
     </div>
+
+
+    // <div class="input-container ic1">
+    //   <input id="firstname" class="input" type="text" placeholder=" " />
+    //   <div class="cut"></div>
+    //   <label for="firstname" class="placeholder">First name</label>
+    // </div> 
+    // <div className="input-container">
+    //   <input 
+    //     type={type} 
+    //     aria-describedby={label}
+    //     placeholder={placeholder}
+    //     className="form-control"
+    //     id={label} 
+    //     name={"user_" + label}
+    //     {...other}
+    //     required
+    //   />
+    //   <label htmlFor={label}>
+    //     {icon && icon}
+    //     <span className="label">{placeholder}</span>
+    //   </label>
+    //   <div className="bar"></div>
+    // </div>
   )
 }
 

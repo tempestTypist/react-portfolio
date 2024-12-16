@@ -450,8 +450,8 @@ border-bottom-width: 2px;
   transition: var(--t1)
 }
 
-.theme-default .input-container .form-control:focus + label .icon,
-.theme-default .input-container input:not(:blank) + label .icon {
+.theme-default .form-control:focus + .cut + .input-label .icon,
+.theme-default .form-control:not(:placeholder-shown) + .cut + .input-label .icon {
   color: #6f42c1;
 }
 
