@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import ThemeChanger from './components/ThemeChanger';
+import { ThemeChanger } from './components/ThemeChanger';
 import Loading from "./components/Loading";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
