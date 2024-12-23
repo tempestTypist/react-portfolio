@@ -181,7 +181,7 @@
 	.theme-default #contact { margin-top: -6rem; }
 }
 
-.theme-default #contact .btn {
+.theme-default .btn {
   position: relative;
   color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
@@ -223,14 +223,14 @@
   outline: 0;
 }
 
-.theme-default #contact .btn:active {
+.theme-default .btn:active {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;
   transition: none !important; 
 }
 
-.theme-default #contact .btn:hover {
+.theme-default .btn:hover {
   color: #fff;
   background: 
   linear-gradient(
@@ -376,10 +376,6 @@ border-bottom-width: 2px;
   background: linear-gradient(270deg, #0fffc1, #7e0fff);
   background-size: 200% 200%;
   animation: animateGlow 10s ease infinite;
-}
-
-.theme-default .btn {
-  border-radius: 30px;
 }
 
 .theme-default .form-control:not(textarea) {

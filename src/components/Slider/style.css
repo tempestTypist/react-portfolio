@@ -1,3 +1,7 @@
+/***************************/
+/****** slider ******/
+/***************************/
+
 .slider-btn {
   background-color: var(--color-primary);
   border: none;
@@ -105,7 +109,6 @@
 }
 
 .slide--current {
-  position: relative;
   opacity: 1;
   pointer-events: auto;
   -webkit-user-select: auto;
@@ -123,12 +126,24 @@
   width: 100%
 }
 
+.slide .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+}
+
 .slide__image-wrapper {
   background-color: var(--color-accent);
   height: 100%;
   width: 100%;
   overflow: hidden;
   transition: transform calc(.2s / 4) ease;
+}
+
+.slide__image-wrapper a {
+  display: block;
+  height: 100%;
 }
 
 .slider ul {

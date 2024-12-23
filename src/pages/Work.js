@@ -22,7 +22,7 @@ export default function Work() {
     {
       index: 2,
       headline: 'Dayplanner',
-      dsc: 'An organizational tool built in React. Since it was only ever intended to be used by me, it would save any changes to local storage - unfortunately Heroku does not have any persistant storage, so Ive removed the saving for demo purposes.',
+      dsc: 'An organizational tool built in React. Primarily a daily planner, but includes weather, a to-do list, and hydration tracking.',
       src: 'https://i.ibb.co/D4GZCnP/thumbnail-Dayplanner.png',
       href: 'https://react-dayplanner.herokuapp.com/'
     }

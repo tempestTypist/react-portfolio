@@ -38,18 +38,33 @@ const Slide = (props) => {
     >
 
       <div className="card border-0">
-        <div className="slide__image-wrapper">
-          <img 
-            src={src}
-            alt={headline} 
-            onLoad={imageLoaded}
-            className="w-100 slide__image" 
-          />
-        </div>
-        <div className="card-body p-0">
-          <div className="p-4">
-            <h5 className="mb-0">{headline}</h5>
-            <p className="small">{dsc}</p>
+        {current === index ? 
+          <div className="slide__image-wrapper">
+            <a href={href} target="_blank" rel="noopener noreferrer">
+              <img 
+                src={src}
+                alt={headline} 
+                onLoad={imageLoaded}
+                className="w-100 slide__image" 
+              />
+            </a>
+          </div>
+        : 
+          <div className="slide__image-wrapper">
+            <img 
+              src={src}
+              alt={headline} 
+              onLoad={imageLoaded}
+              className="w-100 slide__image" 
+            />
+          </div>
+        }
+        <div className="card-body p-4">
+          <div>
+          <h5 className="mb-0">{headline}</h5>
+          <p className="small">{dsc}</p>
+          </div>
+            {current === index ? 
             <a href={href} target="_blank" rel="noopener noreferrer">
               <button 
                 type="button" 
@@ -60,7 +75,16 @@ const Slide = (props) => {
                   Check it out
               </button>
             </a>
-          </div>
+            :
+            <button 
+              type="button" 
+              className="btn" 
+              disabled={true}
+              onMouseMove={handleMouseMove} 
+              onMouseLeave={() => {resetMousePosition()}}
+              style={{"--x": x, "--y": y}}>
+                Check it out
+            </button>}
         </div>
       </div>
     </li>

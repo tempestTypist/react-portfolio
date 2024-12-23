@@ -1,0 +1,13 @@
+/***************************/
+/******** skills *********/
+/***************************/
+
+ul.skills {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.skills li div:first-child {
+  font-family: var(--title-font-primary);
+  font-size: 1.6rem
+}
