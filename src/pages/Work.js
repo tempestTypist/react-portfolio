@@ -10,7 +10,7 @@ export default function Work() {
       headline: 'Vaporwave Desktop',
       dsc: 'Just a bit of fun with Jquery. A Windows 98 style desktop.',
       src: 'https://i.ibb.co/j6GKbzC/thumbnail-Vaporwave-Desktop.png',
-      href: 'https://tempesttypist.github.io/vaporwave-desktop/'
+      href: 'https://vaporwave-desktop.netlify.app/'
     },
     {
       index: 1,
@@ -23,8 +23,8 @@ export default function Work() {
       index: 2,
       headline: 'Dayplanner',
       dsc: 'An organizational tool built in React. Primarily a daily planner, but includes weather, a to-do list, and hydration tracking.',
-      src: 'https://i.ibb.co/D4GZCnP/thumbnail-Dayplanner.png',
-      href: 'https://react-dayplanner.herokuapp.com/'
+      src: 'https://i.ibb.co/dsHSHGbz/preview-img.png',
+      href: 'https://react-dayplanner.netlify.app/'
     }
   ]
 
