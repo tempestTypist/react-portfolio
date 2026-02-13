@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Slide from '../Slide'
-import SliderControl from '../SliderControl'
+import Slide from './slide'
+import SliderControl from './sliderControl'
 import './style.css'
 
 const Slider = (props) => {

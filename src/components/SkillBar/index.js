@@ -10,7 +10,7 @@ const SkillBar = ({ name, percent }) => {
     <li style={{ "--per": snappedPercent }}>
       <div>
         {name}
-        <span className="percent-label">
+        <span className="percent-label ms-2">
           {percent} / 100
         </span>
       </div>

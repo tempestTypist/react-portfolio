@@ -1,7 +1,7 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
-import HeaderToggle from "../HeaderToggle";
-import HeaderNav from "../HeaderNav";
+import HeaderToggle from "./headerToggle";
+import HeaderNav from "./headerNav";
 import './style.css';
 
 const Header = () => {

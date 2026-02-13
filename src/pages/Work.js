@@ -1,9 +1,11 @@
+import { useTheme } from "../context/ThemeContext";
 import Slider from '../components/Slider'
 import { Row } from 'react-bootstrap';
 import dividerTop from '../assets/default-theme/images/page-divider-1.svg'
 import dividerBot from '../assets/default-theme/images/page-divider-2.svg'
 
 export default function Work() {
+  const { theme } = useTheme();
   const slideData = [
     {
       index: 0,
@@ -30,12 +32,12 @@ export default function Work() {
 
   return (
     <Row as={"section"} id="work" className="mt-4">
-      <img src={dividerTop} className="work-divider-top" alt="Aesthetic Divider" />
+      {theme === 'default' && <img src={dividerTop} className="work-divider-top" alt="Aesthetic Divider" />}
       <div>
         <h1 className="pb-3">My Work</h1>
         <Slider heading="Slider" slides={slideData} />
       </div>
-      <img src={dividerBot} className="work-divider-bot" alt="Aesthetic Divider" />
+      {theme === 'default' && <img src={dividerBot} className="work-divider-bot" alt="Aesthetic Divider" />}
     </Row>
   );
 }

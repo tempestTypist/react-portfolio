@@ -32,10 +32,7 @@ const Slide = (props) => {
   }
 
   return (
-    <li 
-      className={classNames} 
-      onClick={handleSlideClick}
-    >
+    <li className={classNames} onClick={handleSlideClick}>
 
       <div className="card border-0">
         {current === index ? 
@@ -61,10 +58,10 @@ const Slide = (props) => {
         }
         <div className="card-body p-4">
           <div>
-          <h5 className="mb-0">{headline}</h5>
-          <p className="small">{dsc}</p>
+            <h5 className="mb-0">{headline}</h5>
+            <p className="small">{dsc}</p>
           </div>
-            {current === index ? 
+          {current === index ? 
             <a href={href} target="_blank" rel="noopener noreferrer">
               <button 
                 type="button" 
@@ -79,12 +76,10 @@ const Slide = (props) => {
             <button 
               type="button" 
               className="btn" 
-              disabled={true}
-              onMouseMove={handleMouseMove} 
-              onMouseLeave={() => {resetMousePosition()}}
-              style={{"--x": x, "--y": y}}>
+              disabled={true}>
                 Check it out
-            </button>}
+            </button>
+            }
         </div>
       </div>
     </li>

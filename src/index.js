@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
-import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import reportWebVitals from './reportWebVitals';

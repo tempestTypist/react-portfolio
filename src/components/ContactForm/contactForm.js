@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { FormProvider, useForm } from 'react-hook-form'
-import { ContactFormInput } from '../ContactFormInput'
+import { ContactFormInput } from './contactFormInput'
 import {
 	name_validation,
 	email_validation,
