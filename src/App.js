@@ -1,10 +1,10 @@
-import React, { useEffect, useState, Suspense, lazy } from 'react';
-import { ThemeContext } from './context/ThemeContext';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import { Container } from 'react-bootstrap';
+import { ThemeContext } from './context/ThemeContext';
+import { ThemeChanger } from './components/ThemeChanger';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import { ThemeChanger } from './components/ThemeChanger';
 import Loading from "./components/Loading";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,14 +19,13 @@ const App = () => {
 	const [isLoading, setLoading] = useState(false)
 
 	useEffect(() => {
-	setLoading(true);
+		setLoading(true);
 
-  import(`./assets/${theme}-theme/styles/${theme}-theme.css`)
-    .finally(() => {
-      setTimeout(() => setLoading(false), 900);
-    });
-}, [theme]);
-
+		import(`./assets/${theme}-theme/styles/${theme}-theme.css`)
+			.finally(() => {
+				setTimeout(() => setLoading(false), 900);
+			});
+	}, [theme]);
 
 	if (isLoading) {
     return (
