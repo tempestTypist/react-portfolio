@@ -115,7 +115,7 @@ export const ContactForm = ({ formInputs, btnLabel }) => {
         <ContactFormInput {...name_validation} />
         <ContactFormInput {...email_validation} />
         <ContactFormInput {...msg_validation} />
-        <div className="mt-5">
+        <div className="btn-container mt-4 mx-auto">
           <button
             onClick={onSubmit}
             className="btn"

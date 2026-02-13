@@ -9,8 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faEnvelope, faComment, faMinus, faX } from '@fortawesome/free-solid-svg-icons'
 import { faSquare } from '@fortawesome/free-regular-svg-icons'
 import { Row, Col } from 'react-bootstrap';
-import { ContactForm } from '../components/ContactForm/'
-
+import { ContactForm } from '../components/ContactForm'
 
 const Contact = ({ theme }) => {
   const [contactTitle, setTitle] = useState("Give me a shout!")

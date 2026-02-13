@@ -33,7 +33,7 @@ export default function Work() {
       <img src={dividerTop} className="work-divider-top" alt="" />
       <div>
         <h1 className="pb-3">My Work</h1>
-        <Slider heading="Example Slider" slides={slideData} />
+        <Slider heading="Slider" slides={slideData} />
       </div>
       <img src={dividerBot} className="work-divider-bot" alt="" />
     </Row>

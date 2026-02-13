@@ -1,16 +1,17 @@
-import { useRef, useState, useEffect } from 'react'
+import { useContext, useRef, useState, useEffect } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWandMagic, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
 import './style.css'
 
-export const ThemeChanger = ({ setTheme, setLoading }) => {
+export const ThemeChanger = () => {
+  const { setTheme } = useContext(ThemeContext);
 	const themeRef = useRef(null);
 	const menuRef = useRef(null);
 	const [toggle, setToggle] = useState(false);
 	const [waveWand, setWaveWand] = useState(false);
 
 	const changeTheme = (newTheme) => {
-		setLoading(true);
 		setTheme(newTheme);
 	}
 

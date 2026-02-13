@@ -125,7 +125,7 @@ const About = () => {
 
           {/* about me */}
           <motion.div className="about-desc" variants={aboutItem}>
-            <div className="card p-4">
+            <div className="card p-4" style={{"max-width": "65rem"}}>
               <div className="card-body">
                 <h1 className="fw-bold mb-0">I am a <span>Web Developer</span></h1>
                 <h4 className="mb-4">(And Illustrator!)</h4>

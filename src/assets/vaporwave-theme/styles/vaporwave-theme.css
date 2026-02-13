@@ -255,7 +255,8 @@
 .theme-vaporwave #about .skills-card .card {
   position: relative;
   margin-top: 130px;
-  width: 50%
+  width: 50vw;
+  max-width: 700px
 }
 
 @media (max-width: 575.98px) { 
@@ -515,14 +516,45 @@
 }
 
 .theme-vaporwave #contact .contact-form {
-  padding: 1rem 4rem
+  padding: 0 4rem 2rem 4rem
+}
+
+.theme-vaporwave #contact .btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .theme-vaporwave #contact .card-title {
+  padding-top: 1rem;
   font-size: 4rem;
   font-family: var(--title-font-secondary);
   filter: drop-shadow(-3px -3px #00ffff) drop-shadow(3px 3px #ff00ff);
   text-shadow: none;
+}
+
+.theme-vaporwave #contact .card-title::after,
+.theme-vaporwave #contact .card-title::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 1;
+  animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.theme-vaporwave #contact .card-title::after {
+  background: url("../images/davidhand1.png") no-repeat;
+  background-size: contain;
+  top: -10px;
+  left: -70px;
+}
+
+.theme-vaporwave #contact .card-title::before {
+  background: url("../images/davidhand2.png") no-repeat;
+  background-size: contain;
+  bottom: -20px;
+  right: -60px;
+  animation-name: move-down1;
 }
 
 /* 
@@ -612,7 +644,7 @@
   background-clip: padding-box, border-box;
 }
 
-.theme-vaporwave .input-container {
+.theme-vaporwave .input-container:not(:first-of-type) {
   margin-top: 2.2rem
 }
 
@@ -749,14 +781,24 @@
 }
 
 .theme-vaporwave .progress {
-  background: url("../images/crystal.gif") repeat-x;
-  background-color: transparent;
-  background-position: left;
+  background-image: url("../images/crystal.gif");
+  background-repeat: round;
+  background-position: top left;
   background-size: 2rem 2rem;
-  filter: drop-shadow(1px 1px #00ffff) drop-shadow(-1px -1px #ff00ff) drop-shadow(1px 1px 3px #00ffff) drop-shadow(-1px -1px 3px #ff00ff);
+
+  background-color: transparent;
+
+  filter:
+    drop-shadow(1px 1px #00ffff)
+    drop-shadow(-1px -1px #ff00ff)
+    drop-shadow(1px 1px 3px #00ffff)
+    drop-shadow(-1px -1px 3px #ff00ff);
+
   height: 100%;
-  width: calc((var(--per) * 1%));
+  width: calc(var(--per) * 1%);
 }
+
+
 
 .theme-vaporwave .footer-divider {
   position: relative;
@@ -820,6 +862,9 @@
   filter: brightness(1.2) hue-rotate(20deg) contrast(1.5);
   font-family: "Psycho 2", sans-serif;
   font-size: 4rem;
+  background-repeat: repeat;
+  background-size: 25% 100%;
+  box-shadow: -10px -10px 15px rgb(178, 192, 197);
 }
 
 .window-header {
