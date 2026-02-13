@@ -30,12 +30,12 @@ export default function Work() {
 
   return (
     <Row as={"section"} id="work" className="mt-4">
-      <img src={dividerTop} className="work-divider-top" alt="" />
+      <img src={dividerTop} className="work-divider-top" alt="Aesthetic Divider" />
       <div>
         <h1 className="pb-3">My Work</h1>
         <Slider heading="Slider" slides={slideData} />
       </div>
-      <img src={dividerBot} className="work-divider-bot" alt="" />
+      <img src={dividerBot} className="work-divider-bot" alt="Aesthetic Divider" />
     </Row>
   );
 }
